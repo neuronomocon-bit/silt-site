@@ -62,6 +62,38 @@ const REGISTRY: RegistryEntry[] = [
     href: "/seb",
     changeLog: [],
   },
+  {
+    id: "SILT-RES-001",
+    title: "Resources",
+    status: "Informative",
+    version: "v0.1",
+    effectiveDate: "2026-02-07",
+    href: "/resources",
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-07",
+        summary:
+          "Initial public resources page and placeholder list for versioned publications and supporting documents.",
+      },
+    ],
+  },
+  {
+    id: "SILT-DISC-001",
+    title: "Disclaimer",
+    status: "Informative",
+    version: "v0.1",
+    effectiveDate: "2026-02-07",
+    href: "/disclaimer",
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-07",
+        summary:
+          "Initial disclaimer defining interpretive limits, non-certification posture, and non-determination of sentience.",
+      },
+    ],
+  },
 ];
 
 export default function RegistryPage() {
@@ -70,10 +102,9 @@ export default function RegistryPage() {
       <h1>Document Registry</h1>
 
       <p style={{ color: "#5a5a5a", lineHeight: 1.6 }}>
-        This registry lists public documents published by Sentient Index Labs &amp;
-        Technology. Documents are versioned and intended for reference and citation.
-        Inclusion in this registry does not imply certification, compliance
-        determination, or a determination of sentience.
+        This registry lists public documents published by Sentient Index Labs &amp; Technology.
+        Documents are versioned and intended for reference and citation. Inclusion in this registry
+        does not imply certification, compliance determination, or a determination of sentience.
       </p>
 
       <table
@@ -97,9 +128,7 @@ export default function RegistryPage() {
         <tbody>
           {REGISTRY.map((doc) => (
             <tr key={doc.id} style={{ borderBottom: "1px solid #f0f0f0" }}>
-              <td style={{ padding: "8px 4px", fontFamily: "monospace" }}>
-                {doc.id}
-              </td>
+              <td style={{ padding: "8px 4px", fontFamily: "monospace" }}>{doc.id}</td>
 
               <td style={{ padding: "8px 4px" }}>
                 <a
