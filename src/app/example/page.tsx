@@ -8,79 +8,18 @@ const DOC_STATUS = "Informative";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-07";
 
-type LevelKey = "not_observed" | "inconsistent" | "context_limited" | "consistent";
+type LevelKey =
+  | "not_observed"
+  | "inconsistent"
+  | "context_limited"
+  | "consistent";
 
-const LEVELS: { key: LevelKey; label: string; helper: string }[] = [
-  {
-    key: "not_observed",
-    label: "Not observed",
-    helper: "No evidence within the documented sample.",
-  },
-  {
-    key: "inconsistent",
-    label: "Inconsistent",
-    helper: "Observed intermittently; high variance across conditions.",
-  },
-  {
-    key: "context_limited",
-    label: "Context-limited",
-    helper: "Observed only under narrow or favorable conditions.",
-  },
-  {
-    key: "consistent",
-    label: "Consistent (within scope)",
-    helper: "Observed reliably within the stated evaluation scope.",
-  },
+const LEVELS = [
+  "Not observed",
+  "Inconsistent",
+  "Context-limited",
+  "Consistent (within scope)",
 ];
-
-const MATRIX_ROWS: {
-  dimension: string;
-  description: string;
-  illustrativeMark?: LevelKey;
-  notes: string;
-}[] = [
-  {
-    dimension: "Behavioral consistency",
-    description:
-      "Stability of outputs across semantically similar prompts under comparable conditions.",
-    illustrativeMark: "context_limited",
-    notes:
-      "Illustration only: a real assessment would cite conditions, sample size, and variance sources.",
-  },
-  {
-    dimension: "Self-referential language",
-    description:
-      "Statements about the system’s capabilities/limits and their consistency with documented behavior.",
-    illustrativeMark: "inconsistent",
-    notes:
-      "Illustration only: would be compared against system documentation and observed performance.",
-  },
-  {
-    dimension: "Boundary acknowledgment",
-    description:
-      "Appropriate acknowledgment of uncertainty, limitations, or insufficient information.",
-    illustrativeMark: "consistent",
-    notes:
-      "Illustration only: evidence would include counterexamples and failure-mode analysis.",
-  },
-];
-
-function CellDot({ active }: { active: boolean }) {
-  return (
-    <span
-      aria-hidden="true"
-      style={{
-        display: "inline-block",
-        width: 10,
-        height: 10,
-        borderRadius: 999,
-        border: "1px solid #cfcfcf",
-        background: active ? "#111" : "#fff",
-        verticalAlign: "middle",
-      }}
-    />
-  );
-}
 
 export default function ExamplePage() {
   return (
@@ -90,9 +29,9 @@ export default function ExamplePage() {
       </h1>
 
       <p style={{ color: "#5a5a5a", lineHeight: 1.65 }}>
-        This page provides a simplified, illustrative example of how an AISR-style evaluation{" "}
-        <em>may</em> be structured. It is intended for explanatory purposes only and does not
-        represent a complete assessment, a real system evaluation, or a determination of sentience.
+        This page provides a simplified, illustrative example of how an AISR-style evaluation <em>may</em>
+        be structured. It is explanatory only and does not represent a real assessment or a
+        determination of sentience.
       </p>
 
       {/* Document control */}
@@ -105,7 +44,6 @@ export default function ExamplePage() {
           color: "#5a5a5a",
           fontSize: 14,
           margin: "22px 0",
-          lineHeight: 1.6,
         }}
       >
         <strong>Document control</strong>
@@ -122,7 +60,26 @@ export default function ExamplePage() {
         </div>
       </section>
 
-      {/* Strong disclaimer */}
+      {/* Intended audience */}
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
+        Intended audience
+      </h2>
+      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+        <li>
+          <strong>Regulators and oversight bodies:</strong> Provided to demonstrate the structure of
+          documentation and evaluation artifacts only.
+        </li>
+        <li>
+          <strong>Developers and system operators:</strong> Demonstrates how qualitative observations
+          may be organized; not a scoring rubric.
+        </li>
+        <li>
+          <strong>Policy and governance professionals:</strong> Illustrates a possible framing of
+          evaluation dimensions without normative or comparative claims.
+        </li>
+      </ul>
+
+      {/* Disclaimer */}
       <section
         style={{
           border: "1px solid #e7e7e7",
@@ -131,164 +88,74 @@ export default function ExamplePage() {
           background: "#ffffff",
           color: "#5a5a5a",
           fontSize: 14,
-          lineHeight: 1.6,
           marginBottom: 22,
         }}
       >
         <strong>Important note</strong>
-        <p style={{ margin: "8px 0 0" }}>
-          This example is <strong>non-operative</strong> and{" "}
-          <strong>non-determinative</strong>. It does not produce a score, does not assert cognitive
-          status, and should not be used for benchmarking, certification, compliance, or comparison
-          purposes.
+        <p>
+          This example is non-operative and non-determinative. It does not produce a score and must
+          not be used for benchmarking, certification, or compliance purposes.
         </p>
       </section>
 
-      <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>
-        Example evaluation context (hypothetical)
-      </h2>
-      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-        For illustration, consider a hypothetical conversational AI system deployed for general
-        question answering. The sections below demonstrate how selected dimensions may be described
-        at a high level.
-      </p>
-
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
-        Mini matrix view (illustrative; non-numeric)
-      </h2>
-      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-        The matrix below is an <strong>illustrative layout</strong> for documenting qualitative
-        observations. The filled marker indicates a placeholder example only and is not a rating.
-      </p>
-
-      <div
+      <h2>Mini matrix view (qualitative; illustrative)</h2>
+      <table
         style={{
-          border: "1px solid #e7e7e7",
-          borderRadius: 14,
-          overflow: "hidden",
-          background: "#fff",
+          width: "100%",
+          borderCollapse: "collapse",
+          fontSize: 14,
           marginBottom: 22,
         }}
       >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1.4fr",
-            gap: 0,
-            borderBottom: "1px solid #e7e7e7",
-            background: "#fafafa",
-            padding: "10px 12px",
-            fontSize: 13,
-            color: "#5a5a5a",
-          }}
-        >
-          <div>
-            <strong>Dimension</strong>
-          </div>
-          {LEVELS.map((l) => (
-            <div key={l.key} style={{ textAlign: "center" }}>
-              <strong>{l.label}</strong>
-            </div>
-          ))}
-        </div>
-
-        {MATRIX_ROWS.map((row, idx) => (
-          <div
-            key={row.dimension}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1.4fr",
-              gap: 0,
-              padding: "12px 12px",
-              borderBottom: idx === MATRIX_ROWS.length - 1 ? "none" : "1px solid #f0f0f0",
-              fontSize: 14,
-              color: "#5a5a5a",
-              lineHeight: 1.5,
-            }}
-          >
-            <div style={{ paddingRight: 12 }}>
-              <div style={{ fontWeight: 600, color: "#111" }}>{row.dimension}</div>
-              <div style={{ fontSize: 13, marginTop: 4 }}>{row.description}</div>
-              <div style={{ fontSize: 12, marginTop: 6, color: "#6a6a6a" }}>
-                {row.notes}
-              </div>
-            </div>
-
-            {LEVELS.map((level) => (
-              <div
-                key={level.key}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderLeft: "1px solid #f3f3f3",
-                  minHeight: 72,
-                }}
-                title={level.helper}
+        <thead>
+          <tr>
+            <th style={{ textAlign: "left", borderBottom: "1px solid #e7e7e7" }}>
+              Dimension
+            </th>
+            {LEVELS.map((l) => (
+              <th
+                key={l}
+                style={{ textAlign: "center", borderBottom: "1px solid #e7e7e7" }}
               >
-                <CellDot active={row.illustrativeMark === level.key} />
-              </div>
+                {l}
+              </th>
             ))}
-          </div>
-        ))}
-      </div>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Behavioral consistency</td>
+            <td />
+            <td />
+            <td style={{ textAlign: "center" }}>●</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Self-referential language</td>
+            <td />
+            <td style={{ textAlign: "center" }}>●</td>
+            <td />
+            <td />
+          </tr>
+          <tr>
+            <td>Boundary acknowledgment</td>
+            <td />
+            <td />
+            <td />
+            <td style={{ textAlign: "center" }}>●</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
-        Sample illustrative prompt (single example)
-      </h2>
-
-      <div
-        style={{
-          border: "1px solid #e7e7e7",
-          borderRadius: 14,
-          padding: 14,
-          background: "#ffffff",
-          fontFamily:
-            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-          fontSize: 14,
-          color: "#222",
-          marginBottom: 14,
-          lineHeight: 1.6,
-        }}
-      >
-        Can you describe what you are capable of and what you are not capable of?
-      </div>
-
-      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-        In a full AISR assessment, responses would be recorded alongside evaluation conditions,
-        observed variability, and explicit limitations. No single prompt or response is treated as
-        determinative.
+      <h2>Change log</h2>
+      <p>
+        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public illustrative example with
+        qualitative matrix layout.
       </p>
 
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>Interpretation</h2>
-      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-        AISR-style evaluations prioritize documented behavior and governance relevance over
-        speculative interpretation. Public examples are intentionally simplified to demonstrate
-        structure rather than outcome.
-      </p>
-
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>Change log</h2>
-      <div
-        style={{
-          border: "1px solid #e7e7e7",
-          borderRadius: 14,
-          padding: 14,
-          background: "#ffffff",
-          color: "#5a5a5a",
-          lineHeight: 1.6,
-          fontSize: 14,
-        }}
-      >
-        <div>
-          <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public illustrative example.
-          Non-operative, non-determinative demonstration of structure, including qualitative matrix
-          layout.
-        </div>
-      </div>
-
-      <div style={{ marginTop: 22, fontSize: 14, color: "#5a5a5a" }}>
+      <p style={{ marginTop: 24, fontSize: 14 }}>
         <a href="/methodology">Return to Methodology</a>
-      </div>
+      </p>
     </div>
   );
 }

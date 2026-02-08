@@ -31,6 +31,7 @@ export default function MethodologyPage() {
           color: "#5a5a5a",
           fontSize: 14,
           margin: "22px 0",
+          lineHeight: 1.6,
         }}
       >
         <strong>Document control</strong>
@@ -47,6 +48,28 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* Intended audience */}
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
+        Intended audience
+      </h2>
+      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+        <li>
+          <strong>Regulators and oversight bodies:</strong> Provided to support understanding of
+          evaluation structure, documentation practices, and stated limitations. This material does
+          not determine compliance or approval status.
+        </li>
+        <li>
+          <strong>Developers and system operators:</strong> May inform internal review and governance
+          preparation. It does not prescribe implementation details and must be adapted to system
+          context and risk.
+        </li>
+        <li>
+          <strong>Policy and governance professionals:</strong> Intended to support conceptual
+          analysis and communication of evaluation approaches without asserting normative requirements
+          beyond stated scope.
+        </li>
+      </ul>
+
       {/* Normative language note */}
       <section
         style={{
@@ -56,31 +79,32 @@ export default function MethodologyPage() {
           background: "#ffffff",
           color: "#5a5a5a",
           fontSize: 14,
-          marginBottom: 22,
+          margin: "22px 0",
+          lineHeight: 1.6,
         }}
       >
         <strong>Normative language note</strong>
         <p>
           This document uses normative language in a limited and intentional manner. The terms
-          <strong> SHALL</strong>, <strong> SHOULD</strong>, and <strong> MAY</strong>, when used,
-          are to be interpreted as follows:
+          <strong> SHALL</strong>, <strong> SHOULD</strong>, and <strong> MAY</strong>, when used, are
+          interpreted as follows:
         </p>
         <ul style={{ paddingLeft: 18 }}>
           <li>
             <strong>SHALL</strong> indicates a requirement necessary for the integrity of the
-            described methodology within its stated scope.
+            methodology within its stated scope.
           </li>
           <li>
-            <strong>SHOULD</strong> indicates a recommended practice that may be adapted based
-            on context, system class, or risk tolerance.
+            <strong>SHOULD</strong> indicates a recommended practice that may be adapted based on
+            context, system class, or risk tolerance.
           </li>
           <li>
             <strong>MAY</strong> indicates an optional practice or consideration.
           </li>
         </ul>
         <p>
-          All other language is descriptive and non-normative. Use of normative terms does not
-          imply certification, compliance determination, or legal obligation.
+          All other language is descriptive and non-normative. Use of normative terms does not imply
+          certification, compliance determination, or legal obligation.
         </p>
       </section>
 
@@ -98,8 +122,8 @@ export default function MethodologyPage() {
         <p style={{ marginTop: 8 }}>
           AISR is a structured evaluation and documentation framework designed to support the
           assessment of advanced AI system behavior, stated capability claims, and associated
-          operational risks under defined conditions. Its primary output consists of reviewable
-          artifacts intended to inform governance, oversight, and external communication.
+          operational risks under defined conditions. Outputs are reviewable artifacts intended to
+          inform governance, oversight, and external communication.
         </p>
       </section>
 
@@ -113,8 +137,8 @@ export default function MethodologyPage() {
 
       <h2>Explicit exclusions</h2>
       <p>
-        AISR does not constitute certification, approval, or legal determination, and does not
-        assert or determine sentience.
+        AISR does not constitute certification, approval, or legal determination and does not assert
+        or determine sentience. References to cognition or agency are operational descriptors only.
       </p>
 
       <h2>Evaluation dimensions (illustrative)</h2>
@@ -126,9 +150,25 @@ export default function MethodologyPage() {
         <li>Governance controls</li>
       </ol>
 
+      <h2>Evidence and reporting practices</h2>
+      <ul>
+        <li>Defined evaluation conditions and constraints</li>
+        <li>Clear distinction between observation and interpretation</li>
+        <li>Documentation of uncertainty and limitations</li>
+        <li>Artifacts suitable for non-technical review</li>
+      </ul>
+
+      <h2>Standards and governance alignment</h2>
+      <p>
+        AISR is designed to support alignment with common risk management and governance frameworks.
+        Mapping to specific standards is provided via supplementary materials and does not imply
+        equivalence or certification.
+      </p>
+
       <h2>Change log</h2>
       <p>
-        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public release.
+        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public release with scoped,
+        non-determinative framing and governance-oriented structure.
       </p>
 
       <p style={{ marginTop: 24, fontSize: 14, color: "#5a5a5a" }}>
