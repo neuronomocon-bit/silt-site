@@ -123,6 +123,17 @@ export default function ExamplePage() {
         }}
       >
         <strong>Status:</strong> Informative example · Not a standard · Subject to revision
+             <div
+        style={{
+          marginTop: 22,
+          fontSize: 14,
+          color: "#5a5a5a",
+          lineHeight: 1.6,
+        }}
+      >
+        <a href="/methodology">Return to Methodology</a>
+      </div>
+ 
       </div>
     </div>
   );
