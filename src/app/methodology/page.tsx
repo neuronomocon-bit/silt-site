@@ -14,6 +14,23 @@ export default function MethodologyPage() {
       <h1 style={{ fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
         Methodology
       </h1>
+            <div
+        style={{
+          borderLeft: "4px solid #e7e7e7",
+          padding: "10px 14px",
+          background: "#fafafa",
+          color: "#5a5a5a",
+          fontSize: 14,
+          lineHeight: 1.6,
+          marginBottom: 18,
+        }}
+      >
+        <strong>Informative document</strong>
+        <br />
+        This page describes methodology structure and intent. It is not a
+        standard, certification, or compliance instrument.
+      </div>
+
 
       <p style={{ color: "#5a5a5a", lineHeight: 1.65 }}>
         This page describes the high-level structure and intended use of the AISR (AI System Risk)
