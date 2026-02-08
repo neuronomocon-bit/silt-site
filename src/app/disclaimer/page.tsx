@@ -1,10 +1,10 @@
-import { H2, MutedP, PageWrap, StrongBox } from "@/components/ui";
+import { Callout, H2, MutedP, PageWrap, StrongBox } from "@/components/ui";
 import { DocumentHeader } from "@/components/document-header";
 
 export const metadata = {
   title: "Disclaimer | Sentient Index Labs & Technology",
   description:
-    "Legal and interpretive disclaimers for Sentient Index Labs & Technology content, including S.E.B. materials.",
+    "Interpretive limits, non-certification posture, and non-determination statement for public SILT documents, including S.E.B.",
 };
 
 const DOC_VERSION = "v0.1";
@@ -15,56 +15,87 @@ export default function DisclaimerPage() {
     <PageWrap>
       <DocumentHeader
         title="Disclaimer"
-        subtitle="Interpretive limits and non-certification posture"
+        subtitle="Document ID: SILT-DISC-001 · Interpretive limits and non-certification posture"
         status="Informative (non-normative)"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
-        note="This disclaimer applies to all pages and materials on this site unless explicitly stated otherwise."
+        note="This disclaimer applies to public SILT materials, including references to the Sentience Evaluation Battery (S.E.B.)."
       />
 
-      <StrongBox title="No certification or compliance determination">
-        <MutedP style={{ marginTop: 0 }}>
-          Sentient Index Labs &amp; Technology (SILT) does not provide certification, conformity
-          assessment, or regulatory compliance determinations.
-        </MutedP>
-        <MutedP>
-          Nothing on this site constitutes a determination of compliance with the EU Artificial
-          Intelligence Act, the NIST AI Risk Management Framework, or any other regulatory or
-          standards regime.
-        </MutedP>
+      <Callout title="Informative document">
+        <p style={{ margin: 0 }}>
+          This page is an <strong>informative</strong> public document. It describes interpretive
+          limits and does not provide legal advice.
+        </p>
+      </Callout>
+
+      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
+        Registry entry:{" "}
+        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
+          SILT-DISC-001
+        </a>
+      </MutedP>
+
+      <MutedP>
+        The materials published on this site are provided for informational purposes only. They are
+        intended to support transparent communication of evaluation and documentation practices,
+        and may be cited as public statements of scope and method.
+      </MutedP>
+
+      <StrongBox title="Non-determination statement">
+        Sentient Index Labs &amp; Technology does not certify sentience. References to “sentience”
+        in the Sentience Evaluation Battery (S.E.B.) name are used as a scoped label for a
+        documentation and evaluation battery, not as a metaphysical, medical, or legal conclusion.
       </StrongBox>
 
-      <H2>S.E.B. scope limitation</H2>
+      <H2>No certification / no compliance determination</H2>
       <MutedP>
-        The Sentience Evaluation Battery (S.E.B.) is an evaluation and documentation framework.
-        References to S.E.B. on this site describe structure, process, and artifacts. They do not
-        constitute a “test result,” a certification outcome, or a compliance determination.
+        No content on this site constitutes certification, approval, conformity assessment, or a
+        determination of compliance with any law, regulation, or standard. Any references to
+        governance frameworks (including the EU Artificial Intelligence Act, the NIST AI Risk
+        Management Framework, ISO/IEC standards, or similar) are provided for contextual mapping and
+        explanation only.
       </MutedP>
 
-      <H2>No determination of sentience</H2>
+      <H2>No legal advice</H2>
       <MutedP>
-        SILT does not assert or determine sentience or consciousness of any system. The term “sentience”
-        appears in the name S.E.B. as a scoped label for the evaluation battery and its documentation
-        structure, not as a metaphysical, scientific, or legal conclusion.
+        Nothing on this site is legal advice. You should consult qualified counsel for legal and
+        regulatory interpretation, compliance planning, or conformity assessment.
       </MutedP>
 
-      <H2>No legal or professional advice</H2>
+      <H2>Limitations of illustrative materials</H2>
       <MutedP>
-        Content on this site does not constitute legal, regulatory, or professional advice.
-        Responsibility for compliance, risk acceptance, and deployment decisions remains with the
-        system owner or operator.
+        Example content (including the S.E.B. public example) is non-operative and non-determinative.
+        It must not be used for benchmarking, certification, compliance, or comparative claims.
+        Illustrative layouts are intended only to show how documentation may be structured.
       </MutedP>
 
-      <H2>Interpretation responsibility</H2>
+      <H2>Reliance and responsibility</H2>
       <MutedP>
-        Readers are responsible for how they interpret and apply information from this site. SILT
-        assumes no responsibility for downstream use, representations, or reliance.
+        Users remain solely responsible for decisions made based on these materials. Operators and
+        deploying entities retain full responsibility for system safety, governance, deployment
+        decisions, and regulatory compliance.
       </MutedP>
 
-      <H2>External references</H2>
+      <H2>Changes</H2>
       <MutedP>
-        References to standards, frameworks, or external materials are informational only and do not
-        imply endorsement, equivalence, adequacy, or satisfaction of requirements.
+        This disclaimer may be updated over time. Current version and effective date are shown in
+        the document header. Historical changes are recorded in the change log below and referenced
+        in the Document Registry.
+      </MutedP>
+
+      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+
+      <H2>Change log</H2>
+      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+        <li>
+          <strong>v0.1</strong> (2026-02-07): Initial public disclaimer defining interpretive limits,
+          non-certification posture, and non-determination statement.
+        </li>
+      </ul>
+
+      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
+        Back to <a href="/registry">Document Registry</a>.
       </MutedP>
     </PageWrap>
   );
