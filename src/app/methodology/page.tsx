@@ -15,7 +15,7 @@ export default function MethodologyPage() {
     <PageWrap>
       <DocumentHeader
         title="Methodology"
-        subtitle="Sentience Evaluation Battery (S.E.B.) — evaluation and documentation framework"
+        subtitle="Document ID: SILT-SEB-METH-001 · Sentience Evaluation Battery (S.E.B.)"
         status="Informative (non-normative)"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}

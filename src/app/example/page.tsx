@@ -50,7 +50,7 @@ export default function ExamplePage() {
     <PageWrap>
       <DocumentHeader
         title="S.E.B. Public Example"
-        subtitle="Illustrative, non-numeric example of documentation structure"
+        subtitle="Document ID: SILT-SEB-EX-001 · Illustrative example"
         status="Informative example (non-normative)"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
