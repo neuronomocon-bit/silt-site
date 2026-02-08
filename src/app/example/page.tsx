@@ -216,15 +216,20 @@ export default function ExamplePage() {
         Placeholder: <a href="/seb">S.E.B. Dashboard</a>
       </MutedP>
 
-      <H2>Change log</H2>
-      <MutedP>
-        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public illustrative example with qualitative
-        matrix layout and non-determinative framing.
-      </MutedP>
-
       <MutedP style={{ fontSize: 14, marginTop: 24 }}>
         <a href="/methodology">Return to Methodology</a>
       </MutedP>
+
+      {/* PART 2: Per-document change log */}
+      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+
+      <H2>Change log</H2>
+      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+        <li>
+          <strong>v0.1</strong> (2026-02-07): Initial illustrative example. No scoring, no compliance
+          determination, and no sentience assertion.
+        </li>
+      </ul>
     </PageWrap>
   );
 }

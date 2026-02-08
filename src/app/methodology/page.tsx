@@ -4,7 +4,7 @@ import { DocumentHeader } from "@/components/document-header";
 export const metadata = {
   title: "Methodology | Sentient Index Labs & Technology",
   description:
-    "Regulator-safe overview of the Sentience Evaluation Battery (S.E.B.) methodology, including scope, intended use, limitations, and governance alignment.",
+    "Regulator-safe overview of the Sentience Evaluation Battery (S.E.B.) methodology, including scope, intended use, limitations, and governance posture.",
 };
 
 const DOC_VERSION = "v0.1";
@@ -68,9 +68,9 @@ export default function MethodologyPage() {
               <strong>MAY</strong> indicates an optional practice or consideration.
             </li>
           </ul>
-          <p>
-            All other language is descriptive and non-normative. Use of normative terms does not
-            imply certification, compliance determination, or legal obligation.
+          <p style={{ marginBottom: 0 }}>
+            Use of normative terms does not imply certification, compliance determination, or legal
+            obligation.
           </p>
         </>
       </Callout>
@@ -87,7 +87,7 @@ export default function MethodologyPage() {
             illustrate conceptual mapping and documentation structure. Such references do not imply
             equivalence, adequacy, or satisfaction of regulatory requirements.
           </p>
-          <p>
+          <p style={{ marginBottom: 0 }}>
             Responsibility for regulatory compliance, legal interpretation, and risk acceptance
             remains solely with the deploying or operating entity.
           </p>
@@ -152,16 +152,21 @@ export default function MethodologyPage() {
         Placeholder: <a href="/seb">S.E.B. Dashboard</a>
       </MutedP>
 
-      <H2>Change log</H2>
-      <MutedP>
-        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public release. Introduces S.E.B.
-        framing, scope limitations, and governance-oriented structure.
-      </MutedP>
-
       <MutedP style={{ fontSize: 14, marginTop: 24 }}>
         For a simplified, non-operative illustration, see the{" "}
         <a href="/example">S.E.B. public example</a>.
       </MutedP>
+
+      {/* PART 2: Per-document change log */}
+      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+
+      <H2>Change log</H2>
+      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+        <li>
+          <strong>v0.1</strong> (2026-02-07): Initial public release. Informative, non-normative
+          description of the Sentience Evaluation Battery methodology, scope, and exclusions.
+        </li>
+      </ul>
     </PageWrap>
   );
 }

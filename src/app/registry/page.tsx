@@ -4,6 +4,12 @@ export const metadata = {
     "Public registry of versioned documents published by Sentient Index Labs & Technology.",
 };
 
+type ChangeLogEntry = {
+  version: string;
+  date: string;
+  summary: string;
+};
+
 type RegistryEntry = {
   id: string;
   title: string;
@@ -11,6 +17,7 @@ type RegistryEntry = {
   version: string;
   effectiveDate: string;
   href: string;
+  changeLog: ChangeLogEntry[];
 };
 
 const REGISTRY: RegistryEntry[] = [
@@ -21,6 +28,14 @@ const REGISTRY: RegistryEntry[] = [
     version: "v0.1",
     effectiveDate: "2026-02-07",
     href: "/methodology",
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-07",
+        summary:
+          "Initial public release. Defines scope, exclusions, and non-normative posture for the Sentience Evaluation Battery (S.E.B.).",
+      },
+    ],
   },
   {
     id: "SILT-SEB-EX-001",
@@ -29,6 +44,14 @@ const REGISTRY: RegistryEntry[] = [
     version: "v0.1",
     effectiveDate: "2026-02-07",
     href: "/example",
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-07",
+        summary:
+          "Initial illustrative example. Non-numeric and non-determinative; provided only to show documentation structure.",
+      },
+    ],
   },
   {
     id: "SILT-SEB-DASH-001",
@@ -37,6 +60,7 @@ const REGISTRY: RegistryEntry[] = [
     version: "—",
     effectiveDate: "—",
     href: "/seb",
+    changeLog: [],
   },
 ];
 
@@ -69,20 +93,27 @@ export default function RegistryPage() {
             <th style={{ padding: "8px 4px" }}>Effective date</th>
           </tr>
         </thead>
+
         <tbody>
           {REGISTRY.map((doc) => (
             <tr key={doc.id} style={{ borderBottom: "1px solid #f0f0f0" }}>
               <td style={{ padding: "8px 4px", fontFamily: "monospace" }}>
                 {doc.id}
               </td>
+
               <td style={{ padding: "8px 4px" }}>
                 <a
                   href={doc.href}
-                  style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}
+                  style={{
+                    color: "#111",
+                    textDecoration: "none",
+                    fontWeight: 600,
+                  }}
                 >
                   {doc.title}
                 </a>
               </td>
+
               <td style={{ padding: "8px 4px" }}>{doc.status}</td>
               <td style={{ padding: "8px 4px" }}>{doc.version}</td>
               <td style={{ padding: "8px 4px" }}>{doc.effectiveDate}</td>
@@ -90,6 +121,30 @@ export default function RegistryPage() {
           ))}
         </tbody>
       </table>
+
+      <h2 style={{ marginTop: 32 }}>Change logs</h2>
+
+      {REGISTRY.map((doc) => (
+        <div key={doc.id} style={{ marginTop: 18 }}>
+          <div style={{ fontWeight: 600 }}>
+            {doc.id} — {doc.title}
+          </div>
+
+          {doc.changeLog.length === 0 ? (
+            <p style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6 }}>
+              No public change log entries.
+            </p>
+          ) : (
+            <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6 }}>
+              {doc.changeLog.map((c) => (
+                <li key={`${doc.id}-${c.version}`}>
+                  <strong>{c.version}</strong> ({c.date}): {c.summary}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
