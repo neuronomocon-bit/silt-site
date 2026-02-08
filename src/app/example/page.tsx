@@ -56,6 +56,13 @@ export default function ExamplePage() {
         effectiveDate={EFFECTIVE_DATE}
         note="This page is provided for illustrative purposes only. It is not a test, a scoring instrument, or a determination of compliance, certification, or sentience."
       />
+<Callout title="Informative document">
+  <p style={{ margin: 0 }}>
+    This page is an <strong>informative</strong> public document. It is illustrative, non-operative,
+    and non-determinative. It does not produce a score and must not be used for benchmarking,
+    certification, compliance, or comparison purposes.
+  </p>
+</Callout>
 
       <MutedP>
         This page provides a simplified example of how the Sentience Evaluation Battery (S.E.B.){" "}

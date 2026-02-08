@@ -21,6 +21,13 @@ export default function MethodologyPage() {
         effectiveDate={EFFECTIVE_DATE}
         note="This document describes S.E.B. structure and intent. It is not a standard, certification, or compliance instrument."
       />
+<Callout title="Informative document">
+  <p style={{ margin: 0 }}>
+    This page is an <strong>informative</strong> public document. It is non-normative and provided
+    for reference and citation. It does not constitute certification, compliance determination, or
+    a determination of sentience.
+  </p>
+</Callout>
 
       <MutedP>
         This page describes the high-level structure and intended use of the Sentience Evaluation
