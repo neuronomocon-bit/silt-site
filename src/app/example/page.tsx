@@ -97,6 +97,35 @@ export default function ExamplePage() {
           not be used for benchmarking, certification, or compliance purposes.
         </p>
       </section>
+            <section
+        style={{
+          border: "1px solid #e7e7e7",
+          borderRadius: 14,
+          padding: 14,
+          background: "#ffffff",
+          color: "#5a5a5a",
+          fontSize: 14,
+          lineHeight: 1.6,
+          margin: "22px 0",
+        }}
+      >
+        <strong>Non-compliance and non-certification statement</strong>
+        <p style={{ marginTop: 8 }}>
+          This material does not constitute a conformity assessment, certification, or determination
+          of compliance under the EU Artificial Intelligence Act, the NIST AI Risk Management Framework,
+          or any other regulatory, legal, or standards regime.
+        </p>
+        <p>
+          References to frameworks, standards, or governance practices are provided solely to
+          illustrate conceptual mapping and documentation structure. Such references do not imply
+          equivalence, adequacy, or satisfaction of regulatory requirements.
+        </p>
+        <p>
+          Responsibility for regulatory compliance, legal interpretation, and risk acceptance
+          remains solely with the deploying or operating entity.
+        </p>
+      </section>
+
 
       <h2>Mini matrix view (qualitative; illustrative)</h2>
       <table
