@@ -1,102 +1,70 @@
+import { H2, MutedP, PageWrap, StrongBox } from "@/components/ui";
+import { DocumentHeader } from "@/components/document-header";
+
 export const metadata = {
   title: "Resources | Sentient Index Labs & Technology",
   description:
-    "Public resources published by Sentient Index Labs & Technology, including methodology summaries and governance alignment notes.",
+    "Public resources related to the Sentience Evaluation Battery (S.E.B.), including placeholder documents and versioning notes.",
 };
+
+const DOC_VERSION = "v0.1";
+const EFFECTIVE_DATE = "2026-02-07";
 
 export default function ResourcesPage() {
   return (
-    <div style={{ maxWidth: 880 }}>
-      <h1 style={{ fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
-        Resources
-      </h1>
+    <PageWrap>
+      <DocumentHeader
+        title="Resources"
+        subtitle="S.E.B. — public materials and versioned references"
+        status="Informative (non-normative)"
+        version={DOC_VERSION}
+        effectiveDate={EFFECTIVE_DATE}
+        note="Resources are provided for informational purposes only. They do not constitute certification, compliance determination, or a sentience conclusion."
+      />
 
-      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-        This page provides access to public materials published by Sentient Index Labs &amp; Technology (SILT).
-        Resources are released selectively and are intended to support evaluation, governance, and oversight
-        discussions.
-      </p>
+      <MutedP>
+        This page hosts public-facing references related to the Sentience Evaluation Battery (S.E.B.).
+        Materials may be updated over time and should be cited using the version and effective date
+        shown on each document.
+      </MutedP>
 
-      <hr style={{ border: 0, height: 1, background: "#e7e7e7", margin: "22px 0" }} />
-
-      {/* AISR */}
-      <section style={{ marginBottom: 26 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 6px" }}>
-          AISR methodology resources
-        </h2>
-
-        <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+      <StrongBox title="Document availability (current)">
+        <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
           <li>
-            <strong>AISR Methodology Overview (PDF)</strong>
-            <br />
-            <span style={{ fontSize: 14 }}>
-              Status: Forthcoming · Planned initial release
-            </span>
+            <strong>S.E.B. overview (PDF)</strong> — placeholder (coming soon)
           </li>
-
           <li>
-            <strong>AISR Evaluation Dimensions Summary (PDF)</strong>
-            <br />
-            <span style={{ fontSize: 14 }}>
-              Status: Draft · Public release pending
-            </span>
+            <strong>Methodology summary (PDF)</strong> — placeholder (coming soon)
+          </li>
+          <li>
+            <strong>Governance mapping note (EU AI Act / NIST AI RMF)</strong> — placeholder (coming soon)
           </li>
         </ul>
-      </section>
+      </StrongBox>
 
-      {/* Governance */}
-      <section style={{ marginBottom: 26 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 6px" }}>
-          Governance and standards alignment
-        </h2>
+      <H2>Versioning and citation</H2>
+      <MutedP>
+        Public materials are intended to be cited as versioned documents. When referencing SILT
+        materials, include:
+      </MutedP>
+      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+        <li>Document title</li>
+        <li>Version (e.g., v0.1)</li>
+        <li>Effective date</li>
+        <li>URL and access date</li>
+      </ul>
 
-        <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
-          <li>
-            <strong>Governance Alignment Summary (PDF)</strong>
-            <br />
-            <span style={{ fontSize: 14 }}>
-              Status: Planned · Mapping notes for common risk frameworks
-            </span>
-          </li>
+      <H2>Scope note</H2>
+      <MutedP>
+        S.E.B. materials describe evaluation and documentation structure. They are not a conformity
+        assessment, certification, or legal determination of compliance, and they do not assert or
+        determine sentience.
+      </MutedP>
 
-          <li>
-            <strong>Risk Documentation Practices Note (PDF)</strong>
-            <br />
-            <span style={{ fontSize: 14 }}>
-              Status: Planned · Guidance on documentation scope and limitations
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      {/* Versioning */}
-      <section style={{ marginBottom: 26 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 6px" }}>
-          Versioning and updates
-        </h2>
-
-        <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-          Public resources are versioned and may be updated over time. When released, each document will include
-          a version identifier and publication date. Substantive revisions will be noted in an accompanying change
-          log.
-        </p>
-      </section>
-
-      {/* Access note */}
-      <div
-        style={{
-          border: "1px solid #e7e7e7",
-          borderRadius: 14,
-          padding: 14,
-          background: "#fafafa",
-          color: "#5a5a5a",
-          lineHeight: 1.6,
-          fontSize: 14,
-        }}
-      >
-        <strong>Access note:</strong> Some materials may be released in limited or draft form. Availability does not
-        imply endorsement, certification, or regulatory determination.
-      </div>
-    </div>
+      <MutedP style={{ fontSize: 14, marginTop: 24 }}>
+        Related: <a href="/methodology">Methodology</a> · <a href="/example">S.E.B. public example</a> ·{" "}
+        <a href="/seb">S.E.B. dashboard (planned)</a>
+      </MutedP>
+    </PageWrap>
   );
 }
