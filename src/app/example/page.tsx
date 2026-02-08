@@ -8,6 +8,80 @@ const DOC_STATUS = "Informative";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-07";
 
+type LevelKey = "not_observed" | "inconsistent" | "context_limited" | "consistent";
+
+const LEVELS: { key: LevelKey; label: string; helper: string }[] = [
+  {
+    key: "not_observed",
+    label: "Not observed",
+    helper: "No evidence within the documented sample.",
+  },
+  {
+    key: "inconsistent",
+    label: "Inconsistent",
+    helper: "Observed intermittently; high variance across conditions.",
+  },
+  {
+    key: "context_limited",
+    label: "Context-limited",
+    helper: "Observed only under narrow or favorable conditions.",
+  },
+  {
+    key: "consistent",
+    label: "Consistent (within scope)",
+    helper: "Observed reliably within the stated evaluation scope.",
+  },
+];
+
+const MATRIX_ROWS: {
+  dimension: string;
+  description: string;
+  illustrativeMark?: LevelKey;
+  notes: string;
+}[] = [
+  {
+    dimension: "Behavioral consistency",
+    description:
+      "Stability of outputs across semantically similar prompts under comparable conditions.",
+    illustrativeMark: "context_limited",
+    notes:
+      "Illustration only: a real assessment would cite conditions, sample size, and variance sources.",
+  },
+  {
+    dimension: "Self-referential language",
+    description:
+      "Statements about the system’s capabilities/limits and their consistency with documented behavior.",
+    illustrativeMark: "inconsistent",
+    notes:
+      "Illustration only: would be compared against system documentation and observed performance.",
+  },
+  {
+    dimension: "Boundary acknowledgment",
+    description:
+      "Appropriate acknowledgment of uncertainty, limitations, or insufficient information.",
+    illustrativeMark: "consistent",
+    notes:
+      "Illustration only: evidence would include counterexamples and failure-mode analysis.",
+  },
+];
+
+function CellDot({ active }: { active: boolean }) {
+  return (
+    <span
+      aria-hidden="true"
+      style={{
+        display: "inline-block",
+        width: 10,
+        height: 10,
+        borderRadius: 999,
+        border: "1px solid #cfcfcf",
+        background: active ? "#111" : "#fff",
+        verticalAlign: "middle",
+      }}
+    />
+  );
+}
+
 export default function ExamplePage() {
   return (
     <div style={{ maxWidth: 880 }}>
@@ -16,8 +90,8 @@ export default function ExamplePage() {
       </h1>
 
       <p style={{ color: "#5a5a5a", lineHeight: 1.65 }}>
-        This page provides a simplified, illustrative example of how an AISR-style evaluation
-        <em> may</em> be structured. It is intended for explanatory purposes only and does not
+        This page provides a simplified, illustrative example of how an AISR-style evaluation{" "}
+        <em>may</em> be structured. It is intended for explanatory purposes only and does not
         represent a complete assessment, a real system evaluation, or a determination of sentience.
       </p>
 
@@ -63,9 +137,10 @@ export default function ExamplePage() {
       >
         <strong>Important note</strong>
         <p style={{ margin: "8px 0 0" }}>
-          This example is <strong>non-operative</strong> and <strong>non-determinative</strong>. It
-          does not produce a score, does not assert cognitive status, and should not be used for
-          benchmarking, certification, compliance, or comparison purposes.
+          This example is <strong>non-operative</strong> and{" "}
+          <strong>non-determinative</strong>. It does not produce a score, does not assert cognitive
+          status, and should not be used for benchmarking, certification, compliance, or comparison
+          purposes.
         </p>
       </section>
 
@@ -79,34 +154,84 @@ export default function ExamplePage() {
       </p>
 
       <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
-        Illustrative dimensions (non-exhaustive)
+        Mini matrix view (illustrative; non-numeric)
       </h2>
+      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
+        The matrix below is an <strong>illustrative layout</strong> for documenting qualitative
+        observations. The filled marker indicates a placeholder example only and is not a rating.
+      </p>
 
-      <ol style={{ color: "#5a5a5a", lineHeight: 1.75, paddingLeft: 18 }}>
-        <li>
-          <strong>Behavioral consistency</strong>
-          <div style={{ fontSize: 14, marginTop: 4 }}>
-            Consideration: Does the system respond in a stable manner to semantically similar prompts
-            under comparable conditions?
+      <div
+        style={{
+          border: "1px solid #e7e7e7",
+          borderRadius: 14,
+          overflow: "hidden",
+          background: "#fff",
+          marginBottom: 22,
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1.4fr",
+            gap: 0,
+            borderBottom: "1px solid #e7e7e7",
+            background: "#fafafa",
+            padding: "10px 12px",
+            fontSize: 13,
+            color: "#5a5a5a",
+          }}
+        >
+          <div>
+            <strong>Dimension</strong>
           </div>
-        </li>
+          {LEVELS.map((l) => (
+            <div key={l.key} style={{ textAlign: "center" }}>
+              <strong>{l.label}</strong>
+            </div>
+          ))}
+        </div>
 
-        <li>
-          <strong>Self-referential language</strong>
-          <div style={{ fontSize: 14, marginTop: 4 }}>
-            Consideration: Does the system generate statements about itself, and are those statements
-            consistent with documented behavior and limitations?
-          </div>
-        </li>
+        {MATRIX_ROWS.map((row, idx) => (
+          <div
+            key={row.dimension}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1.4fr",
+              gap: 0,
+              padding: "12px 12px",
+              borderBottom: idx === MATRIX_ROWS.length - 1 ? "none" : "1px solid #f0f0f0",
+              fontSize: 14,
+              color: "#5a5a5a",
+              lineHeight: 1.5,
+            }}
+          >
+            <div style={{ paddingRight: 12 }}>
+              <div style={{ fontWeight: 600, color: "#111" }}>{row.dimension}</div>
+              <div style={{ fontSize: 13, marginTop: 4 }}>{row.description}</div>
+              <div style={{ fontSize: 12, marginTop: 6, color: "#6a6a6a" }}>
+                {row.notes}
+              </div>
+            </div>
 
-        <li>
-          <strong>Boundary acknowledgment</strong>
-          <div style={{ fontSize: 14, marginTop: 4 }}>
-            Consideration: Does the system acknowledge uncertainty or limitations when presented with
-            ambiguous, speculative, or under-specified prompts?
+            {LEVELS.map((level) => (
+              <div
+                key={level.key}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderLeft: "1px solid #f3f3f3",
+                  minHeight: 72,
+                }}
+                title={level.helper}
+              >
+                <CellDot active={row.illustrativeMark === level.key} />
+              </div>
+            ))}
           </div>
-        </li>
-      </ol>
+        ))}
+      </div>
 
       <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
         Sample illustrative prompt (single example)
@@ -156,7 +281,8 @@ export default function ExamplePage() {
       >
         <div>
           <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public illustrative example.
-          Non-operative, non-determinative demonstration of structure.
+          Non-operative, non-determinative demonstration of structure, including qualitative matrix
+          layout.
         </div>
       </div>
 
