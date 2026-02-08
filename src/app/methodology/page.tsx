@@ -166,6 +166,14 @@ export default function MethodologyPage() {
         with stakeholders. Interpretation should remain bounded by documented scope, evidence, and stated
         limitations.
       </p>
+            <section style={{ marginTop: 30 }}>
+        <p style={{ color: "#5a5a5a", lineHeight: 1.6, fontSize: 14 }}>
+          For a simplified, non-operative illustration of how an AISR-style evaluation may be
+          structured, see the{" "}
+          <a href="/example">public AISR example</a>.
+        </p>
+      </section>
+
     </div>
   );
 }
