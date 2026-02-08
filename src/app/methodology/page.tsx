@@ -1,21 +1,21 @@
 export const metadata = {
   title: "Methodology | Sentient Index Labs & Technology",
   description:
-    "High-level description of SILT’s AISR methodology: scope, intended use, limitations, and governance alignment.",
+    "Regulator-safe overview of the AISR methodology, including scope, intended use, limitations, and governance alignment.",
 };
 
 export default function MethodologyPage() {
   return (
-    <main style={{ maxWidth: 880, margin: "0 auto", padding: "40px 18px" }}>
-      <header style={{ marginBottom: 22 }}>
-        <h1 style={{ fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
-          Methodology
-        </h1>
-        <p style={{ color: "#5a5a5a", margin: 0, lineHeight: 1.55 }}>
-          This page provides a high-level, regulator-safe overview of SILT’s evaluation approach. It is written to be
-          citeable and intentionally avoids speculative claims.
-        </p>
-      </header>
+    <div style={{ maxWidth: 880 }}>
+      <h1 style={{ fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
+        Methodology
+      </h1>
+
+      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
+        This page describes the high-level structure and intended use of the AISR (AI System Risk) methodology.
+        It is written for oversight, governance, and review contexts, and is intentionally limited to claims that
+        can be supported through documentation and observable system behavior.
+      </p>
 
       <section
         style={{
@@ -23,119 +23,113 @@ export default function MethodologyPage() {
           borderRadius: 14,
           padding: 16,
           background: "#fafafa",
-          marginBottom: 22,
+          margin: "22px 0",
         }}
       >
-        <strong>Summary</strong>
-        <p style={{ color: "#5a5a5a", margin: "10px 0 0", lineHeight: 1.55 }}>
-          AISR (AI System Risk) is a structured evaluation and documentation framework designed to help organizations
-          assess advanced AI system behavior, claims, and operational risk under defined conditions, and to produce
-          artifacts that support governance, oversight, and external communication.
+        <strong>Methodology summary</strong>
+        <p style={{ color: "#5a5a5a", margin: "10px 0 0", lineHeight: 1.6 }}>
+          AISR is a structured evaluation and documentation framework designed to support the assessment of advanced
+          AI system behavior, stated capability claims, and associated operational risks under defined conditions.
+          Its primary output consists of reviewable artifacts intended to inform governance, oversight, and
+          external communication.
         </p>
       </section>
 
-      <section style={{ marginBottom: 22 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Scope</h2>
-        <ul style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-          <li>
-            <strong>Evaluation:</strong> What the system does under defined prompts, inputs, and constraints.
-          </li>
-          <li>
-            <strong>Claims:</strong> What is asserted versus what is evidenced, including stated limitations.
-          </li>
-          <li>
-            <strong>Operational risk:</strong> Foreseeable misuse pathways, failure modes, and mitigation controls.
-          </li>
-          <li>
-            <strong>Governance artifacts:</strong> Reporting outputs intended to be reviewed by non-build stakeholders.
-          </li>
-        </ul>
-      </section>
+      <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Intended scope</h2>
+      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, marginTop: 0, paddingLeft: 18 }}>
+        <li>
+          <strong>Observed behavior:</strong> System outputs generated under documented prompts, inputs, and constraints.
+        </li>
+        <li>
+          <strong>Stated claims:</strong> Public or internal claims regarding system capabilities, limitations, or use.
+        </li>
+        <li>
+          <strong>Operational risk:</strong> Foreseeable misuse pathways, failure modes, and mitigation controls.
+        </li>
+        <li>
+          <strong>Governance readiness:</strong> Availability and quality of documentation, monitoring, and response
+          mechanisms.
+        </li>
+      </ul>
 
-      <section style={{ marginBottom: 22 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>What AISR is not</h2>
-        <div
-          style={{
-            border: "1px solid #e7e7e7",
-            borderRadius: 14,
-            padding: 14,
-            background: "#fff",
-            color: "#5a5a5a",
-            lineHeight: 1.55,
-          }}
-        >
-          <p style={{ margin: 0 }}>
-            <strong>AISR is not a certification, endorsement, or legal determination.</strong> It does not grant
-            “approval” status and it is not legal advice.
-          </p>
-          <p style={{ margin: "10px 0 0" }}>
-            <strong>AISR does not claim to establish “sentience.”</strong> Any references to cognition, agency, or
-            related concepts are used only as operational evaluation language within stated scope and limitations.
-          </p>
-        </div>
-      </section>
-
-      <section style={{ marginBottom: 22 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Evaluation dimensions (v1)</h2>
-        <p style={{ color: "#5a5a5a", marginTop: 0, lineHeight: 1.55 }}>
-          AISR outputs are typically organized across these high-level dimensions. Each dimension is supported by
-          documented evidence, boundary conditions, and explicit uncertainty statements where applicable.
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>Explicit exclusions</h2>
+      <div
+        style={{
+          border: "1px solid #e7e7e7",
+          borderRadius: 14,
+          padding: 14,
+          background: "#ffffff",
+          color: "#5a5a5a",
+          lineHeight: 1.6,
+          fontSize: 14,
+        }}
+      >
+        <p style={{ margin: 0 }}>
+          <strong>AISR does not constitute certification, approval, or legal determination.</strong> It does not
+          confer compliance status and does not replace regulatory review or legal analysis.
         </p>
-
-        <ol style={{ color: "#5a5a5a", lineHeight: 1.7 }}>
-          <li>
-            <strong>Capability evidence:</strong> Demonstrated performance under defined tests and constraints.
-          </li>
-          <li>
-            <strong>Behavioral reliability:</strong> Stability, variance, and failure modes across scenarios.
-          </li>
-          <li>
-            <strong>Safety &amp; misuse risk:</strong> Misuse pathways, prompt/interaction risks, and mitigations.
-          </li>
-          <li>
-            <strong>Transparency &amp; traceability:</strong> Evidence trails, documentation quality, and limitations.
-          </li>
-          <li>
-            <strong>Governance readiness:</strong> Controls, monitoring, incident response, and accountability.
-          </li>
-        </ol>
-      </section>
-
-      <section style={{ marginBottom: 22 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Evidence and reporting</h2>
-        <ul style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-          <li>
-            <strong>Defined test conditions:</strong> What inputs were used, what constraints applied, and what was out
-            of scope.
-          </li>
-          <li>
-            <strong>Reproducibility notes:</strong> When and how results may vary (model versioning, temperature,
-            guardrails, tooling).
-          </li>
-          <li>
-            <strong>Limitations:</strong> What the assessment cannot conclude and what evidence would be required.
-          </li>
-          <li>
-            <strong>Governance artifacts:</strong> Summaries suitable for leadership, risk teams, and external review.
-          </li>
-        </ul>
-      </section>
-
-      <section style={{ marginBottom: 22 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Standards alignment</h2>
-        <p style={{ color: "#5a5a5a", marginTop: 0, lineHeight: 1.55 }}>
-          AISR is designed so its outputs can be mapped to common governance frameworks and risk management practices.
-          SILT will publish short, citeable mapping notes as public resources.
+        <p style={{ margin: "10px 0 0" }}>
+          <strong>AISR does not assert or determine sentience.</strong> Any references to cognition, agency, or
+          similar concepts are used solely as operational descriptors within bounded evaluation contexts and
+          should not be interpreted as metaphysical or biological claims.
         </p>
-      </section>
+      </div>
 
-      <section style={{ marginBottom: 0 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Contact</h2>
-        <p style={{ color: "#5a5a5a", marginTop: 0, lineHeight: 1.55 }}>
-          For review workflows, partnerships, or questions about scope and evidence requirements, contact SILT via the
-          site contact channel.
-        </p>
-      </section>
-    </main>
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
+        Evaluation dimensions (illustrative)
+      </h2>
+      <p style={{ color: "#5a5a5a", marginTop: 0, lineHeight: 1.6 }}>
+        AISR outputs are commonly organized across the following dimensions. The specific structure and depth
+        of evaluation may vary depending on system class, deployment context, and available evidence.
+      </p>
+
+      <ol style={{ color: "#5a5a5a", lineHeight: 1.75, paddingLeft: 18 }}>
+        <li>
+          <strong>Capability evidence:</strong> Documented performance under defined test conditions, including
+          stated uncertainties.
+        </li>
+        <li>
+          <strong>Behavioral reliability:</strong> Consistency, variance, and observable failure modes across
+          scenarios.
+        </li>
+        <li>
+          <strong>Safety and misuse risk:</strong> Identified misuse pathways, safeguards, and residual risk.
+        </li>
+        <li>
+          <strong>Transparency and traceability:</strong> Availability of evidence trails, assumptions, and
+          documented limitations.
+        </li>
+        <li>
+          <strong>Governance controls:</strong> Monitoring, incident response, escalation, and accountability
+          mechanisms.
+        </li>
+      </ol>
+
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
+        Evidence and reporting practices
+      </h2>
+      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+        <li>Explicit definition of evaluation conditions and constraints</li>
+        <li>Clear distinction between observed behavior and inferred interpretation</li>
+        <li>Documentation of variability, uncertainty, and known limitations</li>
+        <li>Production of artifacts suitable for non-technical review</li>
+      </ul>
+
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
+        Standards and governance alignment
+      </h2>
+      <p style={{ color: "#5a5a5a", lineHeight: 1.6, marginTop: 0 }}>
+        AISR is designed to support alignment with common risk management and governance frameworks. Mapping to
+        specific standards is performed through supplementary documentation and does not imply equivalence or
+        certification.
+      </p>
+
+      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>Use and review</h2>
+      <p style={{ color: "#5a5a5a", lineHeight: 1.6, marginTop: 0 }}>
+        AISR materials are intended to inform internal review, governance discussions, and external communication
+        with stakeholders. Interpretation should remain bounded by documented scope, evidence, and stated
+        limitations.
+      </p>
+    </div>
   );
 }
