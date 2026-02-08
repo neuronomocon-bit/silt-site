@@ -21,13 +21,21 @@ export default function MethodologyPage() {
         effectiveDate={EFFECTIVE_DATE}
         note="This document describes S.E.B. structure and intent. It is not a standard, certification, or compliance instrument."
       />
-<Callout title="Informative document">
-  <p style={{ margin: 0 }}>
-    This page is an <strong>informative</strong> public document. It is non-normative and provided
-    for reference and citation. It does not constitute certification, compliance determination, or
-    a determination of sentience.
-  </p>
-</Callout>
+
+      <Callout title="Informative document">
+        <p style={{ margin: 0 }}>
+          This page is an <strong>informative</strong> public document. It is non-normative and
+          provided for reference and citation. It does not constitute certification, compliance
+          determination, or a determination of sentience.
+        </p>
+      </Callout>
+
+      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
+        Registry entry:{" "}
+        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
+          SILT-SEB-METH-001
+        </a>
+      </MutedP>
 
       <MutedP>
         This page describes the high-level structure and intended use of the Sentience Evaluation
@@ -44,9 +52,9 @@ export default function MethodologyPage() {
           not determine compliance or approval status.
         </li>
         <li>
-          <strong>Developers and system operators:</strong> May inform internal review and governance
-          preparation. It does not prescribe implementation details and must be adapted to system
-          context and risk.
+          <strong>Developers and system operators:</strong> May inform internal review and
+          governance preparation. It does not prescribe implementation details and must be adapted
+          to system context and risk.
         </li>
         <li>
           <strong>Policy and governance professionals:</strong> Intended to support conceptual
@@ -59,8 +67,8 @@ export default function MethodologyPage() {
         <>
           <p style={{ marginTop: 8 }}>
             This document uses normative language in a limited and intentional manner. The terms{" "}
-            <strong>SHALL</strong>, <strong>SHOULD</strong>, and <strong>MAY</strong>, when used, are
-            interpreted as follows:
+            <strong>SHALL</strong>, <strong>SHOULD</strong>, and <strong>MAY</strong>, when used,
+            are interpreted as follows:
           </p>
           <ul style={{ paddingLeft: 18 }}>
             <li>
@@ -84,7 +92,7 @@ export default function MethodologyPage() {
 
       <Callout title="Non-compliance and non-certification statement">
         <>
-          <p style={{ marginTop: 8 }}>
+          <p style={{ marginTop: 0 }}>
             This material does not constitute a conformity assessment, certification, or
             determination of compliance under the EU Artificial Intelligence Act, the NIST AI Risk
             Management Framework, or any other regulatory, legal, or standards regime.
@@ -104,8 +112,8 @@ export default function MethodologyPage() {
       <StrongBox title="Methodology summary">
         The Sentience Evaluation Battery (S.E.B.) is a structured evaluation and documentation
         framework designed to support review of advanced AI system behavior, stated capability
-        claims, and associated operational risks under defined conditions. Its outputs are reviewable
-        artifacts intended to inform governance, oversight, and external communication.
+        claims, and associated operational risks under defined conditions. Its outputs are
+        reviewable artifacts intended to inform governance, oversight, and external communication.
       </StrongBox>
 
       <H2>Intended scope</H2>
@@ -143,9 +151,9 @@ export default function MethodologyPage() {
 
       <H2>Standards and governance alignment</H2>
       <MutedP>
-        S.E.B. is designed to support alignment with common risk management and governance frameworks.
-        Mapping to specific standards is provided via supplementary materials and does not imply
-        equivalence or certification.
+        S.E.B. is designed to support alignment with common risk management and governance
+        frameworks. Mapping to specific standards is provided via supplementary materials and does
+        not imply equivalence or certification.
       </MutedP>
 
       <H2>Dashboard (planned)</H2>
@@ -164,7 +172,6 @@ export default function MethodologyPage() {
         <a href="/example">S.E.B. public example</a>.
       </MutedP>
 
-      {/* PART 2: Per-document change log */}
       <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
 
       <H2>Change log</H2>
@@ -174,6 +181,10 @@ export default function MethodologyPage() {
           description of the Sentience Evaluation Battery methodology, scope, and exclusions.
         </li>
       </ul>
+
+      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
+        Back to <a href="/registry">Document Registry</a>.
+      </MutedP>
     </PageWrap>
   );
 }

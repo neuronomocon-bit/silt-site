@@ -56,13 +56,21 @@ export default function ExamplePage() {
         effectiveDate={EFFECTIVE_DATE}
         note="This page is provided for illustrative purposes only. It is not a test, a scoring instrument, or a determination of compliance, certification, or sentience."
       />
-<Callout title="Informative document">
-  <p style={{ margin: 0 }}>
-    This page is an <strong>informative</strong> public document. It is illustrative, non-operative,
-    and non-determinative. It does not produce a score and must not be used for benchmarking,
-    certification, compliance, or comparison purposes.
-  </p>
-</Callout>
+
+      <Callout title="Informative document">
+        <p style={{ margin: 0 }}>
+          This page is an <strong>informative</strong> public document. It is illustrative,
+          non-operative, and non-determinative. It does not produce a score and must not be used for
+          benchmarking, certification, compliance, or comparison purposes.
+        </p>
+      </Callout>
+
+      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
+        Registry entry:{" "}
+        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
+          SILT-SEB-EX-001
+        </a>
+      </MutedP>
 
       <MutedP>
         This page provides a simplified example of how the Sentience Evaluation Battery (S.E.B.){" "}
@@ -88,39 +96,41 @@ export default function ExamplePage() {
 
       <Callout title="Important note">
         <p style={{ margin: 0 }}>
-          This example is <strong>non-operative</strong> and <strong>non-determinative</strong>. It does not
-          produce a score and must not be used for benchmarking, certification, compliance, or comparison purposes.
+          This example is <strong>non-operative</strong> and <strong>non-determinative</strong>. It
+          does not produce a score and must not be used for benchmarking, certification, compliance,
+          or comparison purposes.
         </p>
       </Callout>
 
       <Callout title="Non-compliance and non-certification statement">
         <>
           <p style={{ marginTop: 0 }}>
-            This material does not constitute a conformity assessment, certification, or determination of compliance under
-            the EU Artificial Intelligence Act, the NIST AI Risk Management Framework, or any other regulatory, legal, or
-            standards regime.
+            This material does not constitute a conformity assessment, certification, or
+            determination of compliance under the EU Artificial Intelligence Act, the NIST AI Risk
+            Management Framework, or any other regulatory, legal, or standards regime.
           </p>
           <p>
-            References to frameworks, standards, or governance practices are provided solely to illustrate conceptual mapping and
-            documentation structure. Such references do not imply equivalence, adequacy, or satisfaction of regulatory requirements.
+            References to frameworks, standards, or governance practices are provided solely to
+            illustrate conceptual mapping and documentation structure. Such references do not imply
+            equivalence, adequacy, or satisfaction of regulatory requirements.
           </p>
           <p style={{ marginBottom: 0 }}>
-            Responsibility for regulatory compliance, legal interpretation, and risk acceptance remains solely with the deploying
-            or operating entity.
+            Responsibility for regulatory compliance, legal interpretation, and risk acceptance
+            remains solely with the deploying or operating entity.
           </p>
         </>
       </Callout>
 
       <StrongBox title="Example evaluation context (hypothetical)">
-        This example assumes a hypothetical conversational AI system deployed for general question answering.
-        In a full S.E.B. evaluation, conditions would be explicitly documented, including constraints, sampling
-        approach, and evidence artifacts.
+        This example assumes a hypothetical conversational AI system deployed for general question
+        answering. In a full S.E.B. evaluation, conditions would be explicitly documented, including
+        constraints, sampling approach, and evidence artifacts.
       </StrongBox>
 
       <H2>Mini matrix view (illustrative; non-numeric)</H2>
       <MutedP>
-        The matrix below is an <strong>illustrative layout</strong> for documenting qualitative observations.
-        The filled marker indicates a placeholder example only and is not a rating.
+        The matrix below is an <strong>illustrative layout</strong> for documenting qualitative
+        observations. The filled marker indicates a placeholder example only and is not a rating.
       </MutedP>
 
       <div
@@ -211,14 +221,16 @@ export default function ExamplePage() {
 
       <MutedP>
         In a full S.E.B. evaluation, responses would be recorded alongside evaluation conditions,
-        observed variability, and explicit limitations. No single prompt or response is treated as determinative.
+        observed variability, and explicit limitations. No single prompt or response is treated as
+        determinative.
       </MutedP>
 
       <H2>Dashboard (planned)</H2>
       <MutedP>
-        A dashboard is planned to present controlled, versioned S.E.B. artifacts. Public content will remain
-        non-determinative and may be limited in scope.
+        A dashboard is planned to present controlled, versioned S.E.B. artifacts. Public content will
+        remain non-determinative and may be limited in scope.
       </MutedP>
+
       <MutedP style={{ fontSize: 14 }}>
         Placeholder: <a href="/seb">S.E.B. Dashboard</a>
       </MutedP>
@@ -227,7 +239,6 @@ export default function ExamplePage() {
         <a href="/methodology">Return to Methodology</a>
       </MutedP>
 
-      {/* PART 2: Per-document change log */}
       <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
 
       <H2>Change log</H2>
@@ -237,6 +248,10 @@ export default function ExamplePage() {
           determination, and no sentience assertion.
         </li>
       </ul>
+
+      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
+        Back to <a href="/registry">Document Registry</a>.
+      </MutedP>
     </PageWrap>
   );
 }
