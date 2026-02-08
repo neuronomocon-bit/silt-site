@@ -4,6 +4,10 @@ export const metadata = {
     "Regulator-safe overview of the AISR methodology, including scope, intended use, limitations, and governance alignment.",
 };
 
+const DOC_STATUS = "Informative";
+const DOC_VERSION = "v0.1";
+const EFFECTIVE_DATE = "2026-02-07";
+
 export default function MethodologyPage() {
   return (
     <div style={{ maxWidth: 880 }}>
@@ -11,11 +15,39 @@ export default function MethodologyPage() {
         Methodology
       </h1>
 
-      <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
-        This page describes the high-level structure and intended use of the AISR (AI System Risk) methodology.
-        It is written for oversight, governance, and review contexts, and is intentionally limited to claims that
-        can be supported through documentation and observable system behavior.
+      <p style={{ color: "#5a5a5a", lineHeight: 1.65 }}>
+        This page describes the high-level structure and intended use of the AISR (AI System Risk)
+        methodology. It is written for oversight, governance, and review contexts, and is intentionally
+        limited to claims that can be supported through documentation and observable system behavior.
       </p>
+
+      {/* Document control */}
+      <section
+        style={{
+          border: "1px solid #e7e7e7",
+          borderRadius: 14,
+          padding: 14,
+          background: "#fafafa",
+          color: "#5a5a5a",
+          fontSize: 14,
+          margin: "22px 0",
+        }}
+      >
+        <strong>Document control</strong>
+        <div style={{ marginTop: 8 }}>
+          <div>
+            <strong>Status:</strong> {DOC_STATUS} (not a standard)
+          </div>
+          <div>
+            <strong>Version:</strong> {DOC_VERSION}
+          </div>
+          <div>
+            <strong>Effective date:</strong> {EFFECTIVE_DATE}
+          </div>
+        </div>
+      </section>
+
+      {/* Normative language note */}
       <section
         style={{
           border: "1px solid #e7e7e7",
@@ -23,18 +55,17 @@ export default function MethodologyPage() {
           padding: 14,
           background: "#ffffff",
           color: "#5a5a5a",
-          lineHeight: 1.6,
           fontSize: 14,
-          margin: "22px 0",
+          marginBottom: 22,
         }}
       >
         <strong>Normative language note</strong>
-        <p style={{ margin: "8px 0 0" }}>
+        <p>
           This document uses normative language in a limited and intentional manner. The terms
-          <strong> SHALL</strong>, <strong>SHOULD</strong>, and <strong>MAY</strong>, when used,
+          <strong> SHALL</strong>, <strong> SHOULD</strong>, and <strong> MAY</strong>, when used,
           are to be interpreted as follows:
         </p>
-        <ul style={{ margin: "10px 0 0", paddingLeft: 18 }}>
+        <ul style={{ paddingLeft: 18 }}>
           <li>
             <strong>SHALL</strong> indicates a requirement necessary for the integrity of the
             described methodology within its stated scope.
@@ -47,133 +78,63 @@ export default function MethodologyPage() {
             <strong>MAY</strong> indicates an optional practice or consideration.
           </li>
         </ul>
-        <p style={{ margin: "10px 0 0" }}>
+        <p>
           All other language is descriptive and non-normative. Use of normative terms does not
           imply certification, compliance determination, or legal obligation.
         </p>
       </section>
 
+      {/* Methodology summary */}
       <section
         style={{
           border: "1px solid #e7e7e7",
           borderRadius: 14,
           padding: 16,
           background: "#fafafa",
-          margin: "22px 0",
+          marginBottom: 22,
         }}
       >
         <strong>Methodology summary</strong>
-        <p style={{ color: "#5a5a5a", margin: "10px 0 0", lineHeight: 1.6 }}>
-          AISR is a structured evaluation and documentation framework designed to support the assessment of advanced
-          AI system behavior, stated capability claims, and associated operational risks under defined conditions.
-          Its primary output consists of reviewable artifacts intended to inform governance, oversight, and
-          external communication.
+        <p style={{ marginTop: 8 }}>
+          AISR is a structured evaluation and documentation framework designed to support the
+          assessment of advanced AI system behavior, stated capability claims, and associated
+          operational risks under defined conditions. Its primary output consists of reviewable
+          artifacts intended to inform governance, oversight, and external communication.
         </p>
       </section>
 
-      <h2 style={{ fontSize: 18, margin: "0 0 8px" }}>Intended scope</h2>
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, marginTop: 0, paddingLeft: 18 }}>
-        <li>
-          <strong>Observed behavior:</strong> System outputs generated under documented prompts, inputs, and constraints.
-        </li>
-        <li>
-          <strong>Stated claims:</strong> Public or internal claims regarding system capabilities, limitations, or use.
-        </li>
-        <li>
-          <strong>Operational risk:</strong> Foreseeable misuse pathways, failure modes, and mitigation controls.
-        </li>
-        <li>
-          <strong>Governance readiness:</strong> Availability and quality of documentation, monitoring, and response
-          mechanisms.
-        </li>
+      <h2>Intended scope</h2>
+      <ul>
+        <li>Observed system behavior under documented conditions</li>
+        <li>Stated capability and limitation claims</li>
+        <li>Foreseeable operational and misuse risks</li>
+        <li>Governance documentation readiness</li>
       </ul>
 
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>Explicit exclusions</h2>
-      <div
-        style={{
-          border: "1px solid #e7e7e7",
-          borderRadius: 14,
-          padding: 14,
-          background: "#ffffff",
-          color: "#5a5a5a",
-          lineHeight: 1.6,
-          fontSize: 14,
-        }}
-      >
-        <p style={{ margin: 0 }}>
-          <strong>AISR does not constitute certification, approval, or legal determination.</strong> It does not
-          confer compliance status and does not replace regulatory review or legal analysis.
-        </p>
-        <p style={{ margin: "10px 0 0" }}>
-          <strong>AISR does not assert or determine sentience.</strong> Any references to cognition, agency, or
-          similar concepts are used solely as operational descriptors within bounded evaluation contexts and
-          should not be interpreted as metaphysical or biological claims.
-        </p>
-      </div>
-
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
-        Evaluation dimensions (illustrative)
-      </h2>
-      <p style={{ color: "#5a5a5a", marginTop: 0, lineHeight: 1.6 }}>
-        AISR outputs are commonly organized across the following dimensions. The specific structure and depth
-        of evaluation may vary depending on system class, deployment context, and available evidence.
+      <h2>Explicit exclusions</h2>
+      <p>
+        AISR does not constitute certification, approval, or legal determination, and does not
+        assert or determine sentience.
       </p>
 
-      <ol style={{ color: "#5a5a5a", lineHeight: 1.75, paddingLeft: 18 }}>
-        <li>
-          <strong>Capability evidence:</strong> Documented performance under defined test conditions, including
-          stated uncertainties.
-        </li>
-        <li>
-          <strong>Behavioral reliability:</strong> Consistency, variance, and observable failure modes across
-          scenarios.
-        </li>
-        <li>
-          <strong>Safety and misuse risk:</strong> Identified misuse pathways, safeguards, and residual risk.
-        </li>
-        <li>
-          <strong>Transparency and traceability:</strong> Availability of evidence trails, assumptions, and
-          documented limitations.
-        </li>
-        <li>
-          <strong>Governance controls:</strong> Monitoring, incident response, escalation, and accountability
-          mechanisms.
-        </li>
+      <h2>Evaluation dimensions (illustrative)</h2>
+      <ol>
+        <li>Capability evidence</li>
+        <li>Behavioral reliability</li>
+        <li>Safety and misuse risk</li>
+        <li>Transparency and traceability</li>
+        <li>Governance controls</li>
       </ol>
 
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
-        Evidence and reporting practices
-      </h2>
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
-        <li>Explicit definition of evaluation conditions and constraints</li>
-        <li>Clear distinction between observed behavior and inferred interpretation</li>
-        <li>Documentation of variability, uncertainty, and known limitations</li>
-        <li>Production of artifacts suitable for non-technical review</li>
-      </ul>
-
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>
-        Standards and governance alignment
-      </h2>
-      <p style={{ color: "#5a5a5a", lineHeight: 1.6, marginTop: 0 }}>
-        AISR is designed to support alignment with common risk management and governance frameworks. Mapping to
-        specific standards is performed through supplementary documentation and does not imply equivalence or
-        certification.
+      <h2>Change log</h2>
+      <p>
+        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public release.
       </p>
 
-      <h2 style={{ fontSize: 18, margin: "22px 0 8px" }}>Use and review</h2>
-      <p style={{ color: "#5a5a5a", lineHeight: 1.6, marginTop: 0 }}>
-        AISR materials are intended to inform internal review, governance discussions, and external communication
-        with stakeholders. Interpretation should remain bounded by documented scope, evidence, and stated
-        limitations.
+      <p style={{ marginTop: 24, fontSize: 14, color: "#5a5a5a" }}>
+        For a simplified, non-operative illustration, see the{" "}
+        <a href="/example">public AISR example</a>.
       </p>
-            <section style={{ marginTop: 30 }}>
-        <p style={{ color: "#5a5a5a", lineHeight: 1.6, fontSize: 14 }}>
-          For a simplified, non-operative illustration of how an AISR-style evaluation may be
-          structured, see the{" "}
-          <a href="/example">public AISR example</a>.
-        </p>
-      </section>
-
     </div>
   );
 }
