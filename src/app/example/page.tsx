@@ -27,6 +27,25 @@ export default function ExamplePage() {
       <h1 style={{ fontSize: 36, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
         AISR Public Example
       </h1>
+           <div
+        style={{
+          border: "1px solid #e7e7e7",
+          borderRadius: 14,
+          padding: "12px 14px",
+          background: "#fafafa",
+          color: "#5a5a5a",
+          fontSize: 14,
+          lineHeight: 1.6,
+          marginBottom: 18,
+        }}
+      >
+        <strong>Status:</strong> Informative example (non-normative)
+        <br />
+        This page is provided for illustrative purposes only. It is not a test,
+        a scoring instrument, or a determination of compliance, certification,
+        or sentience.
+      </div>
+ 
 
       <p style={{ color: "#5a5a5a", lineHeight: 1.65 }}>
         This page provides a simplified, illustrative example of how an AISR-style evaluation <em>may</em>
