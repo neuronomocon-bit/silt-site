@@ -8,6 +8,35 @@ export const metadata = {
     "Sentient Index Labs & Technology (SILT) — governance-forward evaluation and documentation for advanced AI systems, including the Sentience Evaluation Battery (S.E.B.).",
 };
 
+function LogoPlaceholder() {
+  return (
+    <div
+      aria-hidden="true"
+      style={{
+        width: 28,
+        height: 28,
+        borderRadius: 8,
+        border: "1px solid #e7e7e7",
+        background: "#fafafa",
+        display: "grid",
+        placeItems: "center",
+        flex: "0 0 auto",
+      }}
+      title="Logo placeholder"
+    >
+      <div
+        style={{
+          width: 12,
+          height: 12,
+          borderRadius: 4,
+          border: "1px solid #cfcfcf",
+          background: "#fff",
+        }}
+      />
+    </div>
+  );
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -24,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           style={{
             maxWidth: 980,
             margin: "0 auto",
-            padding: "28px 18px 36px",
+            padding: "26px 18px 36px",
             minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
@@ -43,24 +72,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               gap: 12,
             }}
           >
-            <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-              <a
-                href="/"
-                style={{
-                  color: "#111",
-                  textDecoration: "none",
-                  fontWeight: 650,
-                  letterSpacing: "-0.01em",
-                  fontSize: 16,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Sentient Index Labs &amp; Technology
-              </a>
-              <span style={{ color: "#b0b0b0" }}>·</span>
-              <span style={{ color: "#6a6a6a", fontSize: 13 }}>
-                Public documentation
-              </span>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <LogoPlaceholder />
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                <a
+                  href="/"
+                  style={{
+                    color: "#111",
+                    textDecoration: "none",
+                    fontWeight: 650,
+                    letterSpacing: "-0.01em",
+                    fontSize: 16,
+                    lineHeight: 1.2,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Sentient Index Labs &amp; Technology
+                </a>
+
+                <div style={{ color: "#6a6a6a", fontSize: 13, lineHeight: 1.2 }}>
+                  Public documentation · S.E.B.
+                </div>
+              </div>
             </div>
 
             {/* Primary nav */}
