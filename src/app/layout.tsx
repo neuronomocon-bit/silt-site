@@ -1,3 +1,4 @@
+import "./globals.css";
 import React from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
@@ -8,7 +9,11 @@ export const metadata = {
     "Sentient Index Labs & Technology (SILT) — governance-forward evaluation and documentation for advanced AI systems, including the Sentience Evaluation Battery (S.E.B.).",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body
@@ -43,56 +48,64 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               gap: 12,
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-              {/* Real logo (served from /public) */}
-              <a
-                href="/"
+            {/* Logo + identity (NO nested anchors) */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+              }}
+            >
+              <img
+                src="/SILT_logo symbol only_2026.svg"
+                alt="Sentient Index Labs & Technology"
+                width={44}
+                height={44}
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 12,
-                  textDecoration: "none",
+                  display: "block",
+                  width: 44,
+                  height: 44,
                 }}
-              >
-                <img
-                  src="/SILT_logo symbol only_2026.svg"
-                  alt="Sentient Index Labs & Technology"
-                  width={50}
-                  height={50}
+              />
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                <a
+                  href="/"
                   style={{
-                    display: "block",
-                    width: 50,
-                    height: 50,
+                    color: "#111",
+                    fontWeight: 650,
+                    letterSpacing: "-0.01em",
+                    fontSize: 16,
+                    lineHeight: 1.2,
+                    whiteSpace: "nowrap",
+                    textDecoration: "none",
                   }}
-                />
+                >
+                  Sentient Index Labs &amp; Technology
+                </a>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                  <div
-                    style={{
-                      color: "#111",
-                      fontWeight: 650,
-                      letterSpacing: "-0.01em",
-                      fontSize: 16,
-                      lineHeight: 1.2,
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Sentient Index Labs &amp; Technology
-                  </div>
-
-                  <div style={{ color: "#6a6a6a", fontSize: 13, lineHeight: 1.2 }}>
-                    Public documentation -Sentience Evaluation Battery (S.E.B.)
-                  </div>
-                </div>
-              </a>
+                <a
+  href="/registry"
+  className="registry-link"
+  style={{
+    color: "#6a6a6a",
+    fontSize: 13,
+    lineHeight: 1.2,
+  }}
+>
+  Public documentation — Sentience Evaluation Battery (S.E.B.)
+</a>
+              </div>
             </div>
 
-            {/* Primary nav */}
+            {/* Primary navigation (client component) */}
             <SiteNav />
           </header>
 
+          {/* Page content */}
           <main style={{ flex: 1 }}>{children}</main>
 
+          {/* Global footer */}
           <SiteFooter />
         </div>
       </body>

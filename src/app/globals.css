@@ -39,4 +39,14 @@ a {
   html {
     color-scheme: dark;
   }
+  /* Subtle hover affordance for registry subtitle link */
+a.registry-link {
+  text-decoration: none;
+}
+
+a.registry-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 }
