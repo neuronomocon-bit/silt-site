@@ -33,8 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Global masthead */}
           <header
             style={{
-              paddingBottom: 14,
-              marginBottom: 18,
+              paddingBottom: 10,
+              marginBottom: 14,
               borderBottom: "1px solid #e7e7e7",
               display: "flex",
               flexWrap: "wrap",
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </div>
 
                   <div style={{ color: "#6a6a6a", fontSize: 13, lineHeight: 1.2 }}>
-                    Public documentation · S.E.B.
+                    Public documentation -Sentience Evaluation Battery (S.E.B.)
                   </div>
                 </div>
               </a>
