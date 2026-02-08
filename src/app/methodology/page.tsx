@@ -16,6 +16,42 @@ export default function MethodologyPage() {
         It is written for oversight, governance, and review contexts, and is intentionally limited to claims that
         can be supported through documentation and observable system behavior.
       </p>
+      <section
+        style={{
+          border: "1px solid #e7e7e7",
+          borderRadius: 14,
+          padding: 14,
+          background: "#ffffff",
+          color: "#5a5a5a",
+          lineHeight: 1.6,
+          fontSize: 14,
+          margin: "22px 0",
+        }}
+      >
+        <strong>Normative language note</strong>
+        <p style={{ margin: "8px 0 0" }}>
+          This document uses normative language in a limited and intentional manner. The terms
+          <strong> SHALL</strong>, <strong>SHOULD</strong>, and <strong>MAY</strong>, when used,
+          are to be interpreted as follows:
+        </p>
+        <ul style={{ margin: "10px 0 0", paddingLeft: 18 }}>
+          <li>
+            <strong>SHALL</strong> indicates a requirement necessary for the integrity of the
+            described methodology within its stated scope.
+          </li>
+          <li>
+            <strong>SHOULD</strong> indicates a recommended practice that may be adapted based
+            on context, system class, or risk tolerance.
+          </li>
+          <li>
+            <strong>MAY</strong> indicates an optional practice or consideration.
+          </li>
+        </ul>
+        <p style={{ margin: "10px 0 0" }}>
+          All other language is descriptive and non-normative. Use of normative terms does not
+          imply certification, compliance determination, or legal obligation.
+        </p>
+      </section>
 
       <section
         style={{
