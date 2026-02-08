@@ -33,17 +33,11 @@ export function DocumentHeader({
         {title}
       </h1>
 
-      {subtitle && (
-        <div
-          style={{
-            fontSize: 15,
-            color: "#6a6a6a",
-            marginBottom: 10,
-          }}
-        >
+      {subtitle ? (
+        <div style={{ fontSize: 15, color: "#6a6a6a", marginBottom: 10 }}>
           {subtitle}
         </div>
-      )}
+      ) : null}
 
       <div
         style={{
@@ -65,7 +59,7 @@ export function DocumentHeader({
         </div>
       </div>
 
-      {note && (
+      {note ? (
         <div
           style={{
             marginTop: 14,
@@ -79,7 +73,7 @@ export function DocumentHeader({
         >
           {note}
         </div>
-      )}
+      ) : null}
     </header>
   );
 }

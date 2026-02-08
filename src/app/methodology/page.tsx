@@ -4,7 +4,7 @@ import { DocumentHeader } from "@/components/document-header";
 export const metadata = {
   title: "Methodology | Sentient Index Labs & Technology",
   description:
-    "Regulator-safe overview of the AISR methodology, including scope, intended use, limitations, and governance alignment.",
+    "Regulator-safe overview of the Sentience Evaluation Battery (S.E.B.) methodology, including scope, intended use, limitations, and governance alignment.",
 };
 
 const DOC_VERSION = "v0.1";
@@ -13,24 +13,22 @@ const EFFECTIVE_DATE = "2026-02-07";
 export default function MethodologyPage() {
   return (
     <PageWrap>
-      {/* Formal document header */}
       <DocumentHeader
         title="Methodology"
-        subtitle="AISR — AI System Risk evaluation framework"
+        subtitle="Sentience Evaluation Battery (S.E.B.) — evaluation and documentation framework"
         status="Informative (non-normative)"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
-        note="This document describes methodology structure and intent. It is not a standard, certification, or compliance instrument."
+        note="This document describes S.E.B. structure and intent. It is not a standard, certification, or compliance instrument."
       />
 
-      {/* Intro */}
       <MutedP>
-        This page describes the high-level structure and intended use of the AISR (AI System Risk)
-        methodology. It is written for oversight, governance, and review contexts, and is intentionally
-        limited to claims that can be supported through documentation and observable system behavior.
+        This page describes the high-level structure and intended use of the Sentience Evaluation
+        Battery (S.E.B.). It is written for oversight, governance, and review contexts, and is
+        intentionally limited to claims that can be supported through documentation and observable
+        system behavior.
       </MutedP>
 
-      {/* Intended audience */}
       <H2>Intended audience</H2>
       <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>
@@ -50,7 +48,6 @@ export default function MethodologyPage() {
         </li>
       </ul>
 
-      {/* Normative language */}
       <Callout title="Normative language note">
         <>
           <p style={{ marginTop: 8 }}>
@@ -78,7 +75,6 @@ export default function MethodologyPage() {
         </>
       </Callout>
 
-      {/* Explicit non-compliance */}
       <Callout title="Non-compliance and non-certification statement">
         <>
           <p style={{ marginTop: 8 }}>
@@ -98,15 +94,13 @@ export default function MethodologyPage() {
         </>
       </Callout>
 
-      {/* Summary */}
       <StrongBox title="Methodology summary">
-        AISR is a structured evaluation and documentation framework designed to support the
-        assessment of advanced AI system behavior, stated capability claims, and associated
-        operational risks under defined conditions. Outputs are reviewable artifacts intended to
-        inform governance, oversight, and external communication.
+        The Sentience Evaluation Battery (S.E.B.) is a structured evaluation and documentation
+        framework designed to support review of advanced AI system behavior, stated capability
+        claims, and associated operational risks under defined conditions. Its outputs are reviewable
+        artifacts intended to inform governance, oversight, and external communication.
       </StrongBox>
 
-      {/* Scope */}
       <H2>Intended scope</H2>
       <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>Observed system behavior under documented conditions</li>
@@ -115,14 +109,14 @@ export default function MethodologyPage() {
         <li>Governance documentation readiness</li>
       </ul>
 
-      {/* Exclusions */}
       <H2>Explicit exclusions</H2>
       <MutedP>
-        AISR does not constitute certification, approval, or legal determination and does not assert
-        or determine sentience. References to cognition or agency are operational descriptors only.
+        S.E.B. does not constitute certification, approval, or legal determination. S.E.B. does not
+        claim to determine or certify sentience. Any references to “sentience” are used as a scoped
+        label for the evaluation battery and its documentation structure, not as a metaphysical or
+        legal conclusion.
       </MutedP>
 
-      {/* Dimensions */}
       <H2>Evaluation dimensions (illustrative)</H2>
       <ol style={{ color: "#5a5a5a", lineHeight: 1.75, paddingLeft: 18 }}>
         <li>Capability evidence</li>
@@ -132,7 +126,6 @@ export default function MethodologyPage() {
         <li>Governance controls</li>
       </ol>
 
-      {/* Evidence */}
       <H2>Evidence and reporting practices</H2>
       <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>Defined evaluation conditions and constraints</li>
@@ -141,25 +134,33 @@ export default function MethodologyPage() {
         <li>Artifacts suitable for non-technical review</li>
       </ul>
 
-      {/* Standards */}
       <H2>Standards and governance alignment</H2>
       <MutedP>
-        AISR is designed to support alignment with common risk management and governance frameworks.
+        S.E.B. is designed to support alignment with common risk management and governance frameworks.
         Mapping to specific standards is provided via supplementary materials and does not imply
         equivalence or certification.
       </MutedP>
 
-      {/* Changelog */}
-      <H2>Change log</H2>
+      <H2>Dashboard (planned)</H2>
       <MutedP>
-        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public release with scoped,
-        non-determinative framing and governance-oriented structure.
+        A public-facing dashboard for the Sentience Evaluation Battery (S.E.B.) is planned. The
+        dashboard is intended to present controlled, non-determinative evaluation artifacts and
+        versioned summaries for reference.
       </MutedP>
 
-      {/* Cross-link */}
+      <MutedP style={{ fontSize: 14 }}>
+        Placeholder: <a href="/seb">S.E.B. Dashboard</a>
+      </MutedP>
+
+      <H2>Change log</H2>
+      <MutedP>
+        <strong>{DOC_VERSION}</strong> ({EFFECTIVE_DATE}) — Initial public release. Introduces S.E.B.
+        framing, scope limitations, and governance-oriented structure.
+      </MutedP>
+
       <MutedP style={{ fontSize: 14, marginTop: 24 }}>
         For a simplified, non-operative illustration, see the{" "}
-        <a href="/example">public AISR example</a>.
+        <a href="/example">S.E.B. public example</a>.
       </MutedP>
     </PageWrap>
   );
