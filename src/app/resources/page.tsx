@@ -7,8 +7,8 @@ export const metadata = {
     "Public resources and placeholders for versioned documents supporting the Sentience Evaluation Battery (S.E.B.).",
 };
 
-const DOC_VERSION = "v0.1";
-const EFFECTIVE_DATE = "2026-02-07";
+const DOC_VERSION = "v0.1.1";
+const EFFECTIVE_DATE = "2026-02-08";
 
 export default function ResourcesPage() {
   return (
@@ -64,6 +64,12 @@ export default function ResourcesPage() {
         <li>
           <a href="/disclaimer">Disclaimer</a> — Interpretive limits and non-certification posture
         </li>
+        <li>
+          <a href="/privacy">Privacy Policy</a> — Data handling and site analytics posture
+        </li>
+        <li>
+          <a href="/terms">Terms of Use</a> — Website use terms and limitations
+        </li>
       </ul>
 
       <H2>Planned publications (placeholders)</H2>
@@ -90,8 +96,7 @@ export default function ResourcesPage() {
       <H2>External references (informative)</H2>
       <MutedP>
         External references may be added here as links in the future. Inclusion does not imply
-        endorsement, adequacy, or compliance. If you want, we can add a short curated list later
-        (EU AI Act, NIST AI RMF, ISO/IEC references) in a strictly neutral tone.
+        endorsement, adequacy, or compliance.
       </MutedP>
 
       <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
@@ -101,6 +106,10 @@ export default function ResourcesPage() {
         <li>
           <strong>v0.1</strong> (2026-02-07): Initial public resources page with placeholders for
           versioned publications and supporting materials.
+        </li>
+        <li>
+          <strong>v0.1.1</strong> (2026-02-08): Added Privacy Policy and Terms of Use to listed public
+          documents. No changes to scope or interpretive posture.
         </li>
       </ul>
 

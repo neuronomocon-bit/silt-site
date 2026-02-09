@@ -49,7 +49,7 @@ const REGISTRY: RegistryEntry[] = [
         version: "v0.1",
         date: "2026-02-07",
         summary:
-          "Initial illustrative example. Non-numeric and non-determinative; provided only to show documentation structure.",
+          "Initial illustrative example. Non-numeric and non-determinative; provided only to demonstrate documentation structure.",
       },
     ],
   },
@@ -74,7 +74,13 @@ const REGISTRY: RegistryEntry[] = [
         version: "v0.1",
         date: "2026-02-07",
         summary:
-          "Initial public resources page and placeholder list for versioned publications and supporting documents.",
+          "Initial public resources page with placeholders for versioned publications and supporting materials.",
+      },
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary:
+          "Added Privacy Policy and Terms of Use to listed public documents.",
       },
     ],
   },
@@ -91,6 +97,38 @@ const REGISTRY: RegistryEntry[] = [
         date: "2026-02-07",
         summary:
           "Initial disclaimer defining interpretive limits, non-certification posture, and non-determination of sentience.",
+      },
+    ],
+  },
+  {
+    id: "SILT-PRIV-001",
+    title: "Privacy Policy",
+    status: "Informative",
+    version: "v0.1",
+    effectiveDate: "2026-02-08",
+    href: "/privacy",
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary:
+          "Initial public privacy policy describing data handling for the SILT website.",
+      },
+    ],
+  },
+  {
+    id: "SILT-TERM-001",
+    title: "Terms of Use",
+    status: "Informative",
+    version: "v0.1",
+    effectiveDate: "2026-02-08",
+    href: "/terms",
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary:
+          "Initial public terms of use describing acceptable use and limitations for the SILT website.",
       },
     ],
   },
@@ -128,8 +166,9 @@ export default function RegistryPage() {
         <tbody>
           {REGISTRY.map((doc) => (
             <tr key={doc.id} style={{ borderBottom: "1px solid #f0f0f0" }}>
-              <td style={{ padding: "8px 4px", fontFamily: "monospace" }}>{doc.id}</td>
-
+              <td style={{ padding: "8px 4px", fontFamily: "monospace" }}>
+                {doc.id}
+              </td>
               <td style={{ padding: "8px 4px" }}>
                 <a
                   href={doc.href}
@@ -142,7 +181,6 @@ export default function RegistryPage() {
                   {doc.title}
                 </a>
               </td>
-
               <td style={{ padding: "8px 4px" }}>{doc.status}</td>
               <td style={{ padding: "8px 4px" }}>{doc.version}</td>
               <td style={{ padding: "8px 4px" }}>{doc.effectiveDate}</td>
@@ -166,7 +204,7 @@ export default function RegistryPage() {
           ) : (
             <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6 }}>
               {doc.changeLog.map((c) => (
-                <li key={`${doc.id}-${c.version}`}>
+                <li key={`${doc.id}-${c.version}-${c.date}`}>
                   <strong>{c.version}</strong> ({c.date}): {c.summary}
                 </li>
               ))}
