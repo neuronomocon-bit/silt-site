@@ -16,7 +16,7 @@ export default function ResourcesPage() {
       <DocumentHeader
         title="Resources"
         subtitle="Document ID: SILT-RES-001 · Public references and versioned materials"
-        status="Informative (non-normative)"
+        status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
         note="This page lists public materials and placeholders for future versioned publications. Listing does not imply endorsement or regulatory adequacy."

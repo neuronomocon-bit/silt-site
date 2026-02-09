@@ -16,7 +16,7 @@ export default function PrivacyPage() {
       <DocumentHeader
         title="Privacy Policy"
         subtitle="Document ID: SILT-PRIV-001 · Website data handling statement"
-        status="Informative (non-normative)"
+        status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
         note="This policy describes data handling for this website only. It does not address third-party services outside this site."

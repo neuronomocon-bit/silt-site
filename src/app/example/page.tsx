@@ -51,7 +51,7 @@ export default function ExamplePage() {
       <DocumentHeader
         title="S.E.B. Public Example"
         subtitle="Document ID: SILT-SEB-EX-001 · Illustrative example"
-        status="Informative example (non-normative)"
+        status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
         note="This page is provided for illustrative purposes only. It is not a test, a scoring instrument, or a determination of compliance, certification, or sentience."

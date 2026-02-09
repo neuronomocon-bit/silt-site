@@ -16,7 +16,7 @@ export default function TermsPage() {
       <DocumentHeader
         title="Terms of Use"
         subtitle="Document ID: SILT-TERM-001 · Website terms and limitations"
-        status="Informative (non-normative)"
+        status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
         note="These Terms apply to use of this website and its public documents. They are not legal advice."

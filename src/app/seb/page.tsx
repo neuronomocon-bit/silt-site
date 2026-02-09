@@ -16,7 +16,7 @@ export default function SebDashboardPlaceholderPage() {
       <DocumentHeader
         title="S.E.B. Dashboard"
         subtitle="Sentience Evaluation Battery — embedded dashboard (planned)"
-        status="Placeholder (non-operative)"
+        status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
         note="This page is a placeholder for a future embedded dashboard. It does not provide results, scoring, certification, or compliance determinations."
