@@ -144,6 +144,34 @@ export default function RegistryPage() {
         Documents are versioned and intended for reference and citation. Inclusion in this registry
         does not imply certification, compliance determination, or a determination of sentience.
       </p>
+      <div
+  style={{
+    marginTop: 18,
+    marginBottom: 24,
+    padding: 14,
+    background: "#fafafa",
+    border: "1px solid #e7e7e7",
+    borderRadius: 6,
+    fontSize: 14,
+    lineHeight: 1.6,
+    color: "#5a5a5a",
+  }}
+>
+  <strong style={{ color: "#111" }}>Document status legend</strong>
+
+  <ul style={{ marginTop: 8, paddingLeft: 18 }}>
+    <li>
+      <strong>Informative</strong>: Provided for transparency and reference only. Informative
+      documents do not define requirements, do not certify compliance, and do not determine
+      sentience or capability.
+    </li>
+    <li>
+      <strong>Planned</strong>: Document is announced but not yet released. Content, scope, and
+      versioning are subject to change prior to publication.
+    </li>
+  </ul>
+</div>
+
 
       <table
         style={{
