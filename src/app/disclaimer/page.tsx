@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
       <DocumentHeader
         title="Disclaimer"
         subtitle="Document ID: SILT-DISC-001 · Interpretive limits and non-certification posture"
-        status="Informative (non-normative)"
+        status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
         note="This disclaimer applies to public SILT materials, including references to the Sentience Evaluation Battery (S.E.B.)."
