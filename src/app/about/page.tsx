@@ -13,7 +13,7 @@ export default function AboutPage() {
 
       <p style={{ color: "#5a5a5a", lineHeight: 1.65, marginTop: 0 }}>
         Sentient Index Labs &amp; Technology (SILT) is a research and methodology practice focused on evaluation,
-        governance, and standards-oriented communication for advanced AI systems. Our work emphasizes auditability,
+        governance, and standards-oriented communication for advanced A.I. systems. Our work emphasizes auditability,
         careful scope definition, and documentation that can be reviewed by both technical and non-technical stakeholders.
       </p>
 
