@@ -1,4 +1,34 @@
-import React from "react";
+type DocumentHeaderProps = {
+  title: string;
+  subtitle: string;
+  status: "Informative" | "Planned" | "Normative";
+  version: string;
+  effectiveDate: string;
+  note?: string;
+};
+
+function StatusBadge({ status }: { status: string }) {
+  return (
+    <span
+      style={{
+        marginLeft: 10,
+        padding: "2px 8px",
+        fontSize: 11,
+        fontWeight: 600,
+        textTransform: "uppercase",
+        letterSpacing: "0.04em",
+        color: "#444",
+        background: "#f1f1f1",
+        border: "1px solid #ddd",
+        borderRadius: 999,
+        verticalAlign: "middle",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {status}
+    </span>
+  );
+}
 
 export function DocumentHeader({
   title,
@@ -7,73 +37,58 @@ export function DocumentHeader({
   version,
   effectiveDate,
   note,
-}: {
-  title: string;
-  subtitle?: string;
-  status: string;
-  version: string;
-  effectiveDate: string;
-  note?: string;
-}) {
+}: DocumentHeaderProps) {
   return (
-    <header
-      style={{
-        borderBottom: "1px solid #e7e7e7",
-        paddingBottom: 16,
-        marginBottom: 24,
-      }}
-    >
-      <h1
-        style={{
-          fontSize: 36,
-          letterSpacing: "-0.02em",
-          margin: "0 0 6px",
-        }}
-      >
-        {title}
-      </h1>
-
-      {subtitle ? (
-        <div style={{ fontSize: 15, color: "#6a6a6a", marginBottom: 10 }}>
-          {subtitle}
-        </div>
-      ) : null}
+    <header style={{ marginBottom: 28 }}>
+      <div style={{ marginBottom: 6 }}>
+        <h1
+          style={{
+            margin: 0,
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+          }}
+        >
+          {title}
+          <StatusBadge status={status} />
+        </h1>
+      </div>
 
       <div
         style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "12px 24px",
           fontSize: 14,
           color: "#5a5a5a",
+          lineHeight: 1.6,
+          marginBottom: 8,
         }}
       >
-        <div>
-          <strong>Status:</strong> {status}
-        </div>
-        <div>
-          <strong>Version:</strong> {version}
-        </div>
-        <div>
-          <strong>Effective date:</strong> {effectiveDate}
-        </div>
+        {subtitle}
       </div>
 
-      {note ? (
+      <div
+        style={{
+          fontSize: 13,
+          color: "#6a6a6a",
+          marginBottom: note ? 10 : 0,
+        }}
+      >
+        Version {version} · Effective {effectiveDate}
+      </div>
+
+      {note && (
         <div
           style={{
-            marginTop: 14,
-            borderLeft: "4px solid #e7e7e7",
-            padding: "10px 14px",
+            fontSize: 13,
+            color: "#6a6a6a",
             background: "#fafafa",
-            color: "#5a5a5a",
-            fontSize: 14,
-            lineHeight: 1.6,
+            border: "1px solid #e7e7e7",
+            padding: "8px 12px",
+            borderRadius: 6,
           }}
         >
           {note}
         </div>
-      ) : null}
+      )}
     </header>
   );
 }
