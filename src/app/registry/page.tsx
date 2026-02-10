@@ -1,39 +1,39 @@
-export const metadata = {
-  title: "Document Registry | Sentient Index Labs & Technology",
-  description:
-    "Public registry of versioned documents published by Sentient Index Labs & Technology.",
-};
+import React from "react";
+import { DocumentHeader } from "@/components/document-header";
+import { Callout, PageWrap, MutedP, H2 } from "@/components/ui";
 
-type ChangeLogEntry = {
+type Change = {
   version: string;
   date: string;
   summary: string;
 };
 
-type RegistryEntry = {
+type Doc = {
   id: string;
   title: string;
-  status: "Informative" | "Normative" | "Planned";
+  status: "Informative" | "Planned" | "Normative";
   version: string;
   effectiveDate: string;
   href: string;
-  changeLog: ChangeLogEntry[];
+  scopeNote: string;
+  changes: Change[];
 };
 
-const REGISTRY: RegistryEntry[] = [
+const DOCS: Doc[] = [
   {
     id: "SILT-SEB-METH-001",
     title: "S.E.B. Methodology",
     status: "Informative",
     version: "v0.1",
-    effectiveDate: "2026-02-07",
+    effectiveDate: "2026-02-08",
     href: "/methodology",
-    changeLog: [
+    scopeNote:
+      "High-level descriptive overview of the Sentience Evaluation Battery (S.E.B.). Non-normative.",
+    changes: [
       {
         version: "v0.1",
-        date: "2026-02-07",
-        summary:
-          "Initial public release. Defines scope, exclusions, and non-normative posture for the Sentience Evaluation Battery (S.E.B.).",
+        date: "2026-02-08",
+        summary: "Initial public methodology document.",
       },
     ],
   },
@@ -42,204 +42,222 @@ const REGISTRY: RegistryEntry[] = [
     title: "S.E.B. Public Example",
     status: "Informative",
     version: "v0.1",
-    effectiveDate: "2026-02-07",
+    effectiveDate: "2026-02-08",
     href: "/example",
-    changeLog: [
+    scopeNote:
+      "Illustrative example only. Not a scoring instrument, certification, or compliance determination.",
+    changes: [
       {
         version: "v0.1",
-        date: "2026-02-07",
-        summary:
-          "Initial illustrative example. Non-numeric and non-determinative; provided only to demonstrate documentation structure.",
+        date: "2026-02-08",
+        summary: "Initial illustrative example and matrix view placeholder.",
       },
     ],
   },
+
+  // ✅ NEW DOCUMENT: Status of the Framework
   {
-    id: "SILT-SEB-DASH-001",
-    title: "S.E.B. Dashboard",
-    status: "Planned",
-    version: "—",
-    effectiveDate: "—",
-    href: "/seb",
-    changeLog: [],
+    id: "SILT-STATUS-001",
+    title: "Status of the Framework",
+    status: "Informative",
+    version: "v0.1",
+    effectiveDate: "2026-02-09",
+    href: "/status",
+    scopeNote:
+      "Current maturity, intended audience, and non-operational posture of the framework and S.E.B. Informative only.",
+    changes: [
+      {
+        version: "v0.1",
+        date: "2026-02-09",
+        summary:
+          "Initial status statement describing maturity, scope exclusions, and relationship to regulation/standards.",
+      },
+    ],
   },
+
   {
     id: "SILT-RES-001",
     title: "Resources",
     status: "Informative",
-    version: "v0.1",
-    effectiveDate: "2026-02-07",
+    version: "v0.1.1",
+    effectiveDate: "2026-02-08",
     href: "/resources",
-    changeLog: [
+    scopeNote:
+      "Public index of resources and placeholders for planned publications. Informative only.",
+    changes: [
       {
         version: "v0.1",
         date: "2026-02-07",
         summary:
-          "Initial public resources page with placeholders for versioned publications and supporting materials.",
+          "Initial public resources page with placeholders for future versioned publications.",
       },
       {
-        version: "v0.1",
+        version: "v0.1.1",
         date: "2026-02-08",
         summary:
-          "Added Privacy Policy and Terms of Use to listed public documents.",
+          "Added Privacy Policy and Terms of Use to listed public documents. No scope change.",
       },
     ],
   },
   {
-    id: "SILT-DISC-001",
-    title: "Disclaimer",
-    status: "Informative",
-    version: "v0.1",
-    effectiveDate: "2026-02-07",
-    href: "/disclaimer",
-    changeLog: [
-      {
-        version: "v0.1",
-        date: "2026-02-07",
-        summary:
-          "Initial disclaimer defining interpretive limits, non-certification posture, and non-determination of sentience.",
-      },
-    ],
-  },
-  {
-    id: "SILT-PRIV-001",
+    id: "SILT-LEGAL-PRIV-001",
     title: "Privacy Policy",
     status: "Informative",
     version: "v0.1",
     effectiveDate: "2026-02-08",
     href: "/privacy",
-    changeLog: [
+    scopeNote:
+      "Privacy and data handling posture for this website. Informative only.",
+    changes: [
       {
         version: "v0.1",
         date: "2026-02-08",
-        summary:
-          "Initial public privacy policy describing data handling for the SILT website.",
+        summary: "Initial privacy policy publication.",
       },
     ],
   },
   {
-    id: "SILT-TERM-001",
+    id: "SILT-LEGAL-TERM-001",
     title: "Terms of Use",
     status: "Informative",
     version: "v0.1",
     effectiveDate: "2026-02-08",
     href: "/terms",
-    changeLog: [
+    scopeNote:
+      "Website terms and limitations. Informative only.",
+    changes: [
       {
         version: "v0.1",
         date: "2026-02-08",
-        summary:
-          "Initial public terms of use describing acceptable use and limitations for the SILT website.",
+        summary: "Initial terms of use publication.",
+      },
+    ],
+  },
+  {
+    id: "SILT-LEGAL-DISC-001",
+    title: "Disclaimer",
+    status: "Informative",
+    version: "v0.1",
+    effectiveDate: "2026-02-08",
+    href: "/disclaimer",
+    scopeNote:
+      "Non-certification posture and interpretive limits. Informative only.",
+    changes: [
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary: "Initial disclaimer publication.",
       },
     ],
   },
 ];
 
+export const metadata = {
+  title: "Document Registry | Sentient Index Labs & Technology",
+  description:
+    "Document Registry for Sentient Index Labs & Technology (SILT), including versioning and change logs for public documents related to the Sentience Evaluation Battery (S.E.B.).",
+};
+
 export default function RegistryPage() {
   return (
-    <div style={{ maxWidth: 880 }}>
-      <h1>Document Registry</h1>
+    <PageWrap>
+      <DocumentHeader
+        title="Document Registry"
+        subtitle="Public registry of SILT documents and version history"
+        status="Informative"
+        version="v0.1"
+        effectiveDate="2026-02-09"
+        note="This registry is provided for transparency and citation. Inclusion does not imply certification, compliance determination, or a determination of sentience."
+      />
 
-      <p style={{ color: "#5a5a5a", lineHeight: 1.6 }}>
-        This registry lists public documents published by Sentient Index Labs &amp; Technology.
-        Documents are versioned and intended for reference and citation. Inclusion in this registry
-        does not imply certification, compliance determination, or a determination of sentience.
-      </p>
-      <div
-  style={{
-    marginTop: 18,
-    marginBottom: 24,
-    padding: 14,
-    background: "#fafafa",
-    border: "1px solid #e7e7e7",
-    borderRadius: 6,
-    fontSize: 14,
-    lineHeight: 1.6,
-    color: "#5a5a5a",
-  }}
->
-  <strong style={{ color: "#111" }}>Document status legend</strong>
+      <Callout title="Document status legend">
+        <ul style={{ margin: 0, paddingLeft: 18, color: "#5a5a5a", lineHeight: 1.6 }}>
+          <li>
+            <strong>Informative</strong>: Provided for transparency and reference only. Does not
+            define requirements, certify compliance, or determine sentience/capability.
+          </li>
+          <li>
+            <strong>Planned</strong>: Announced but not yet released. Content and scope may change
+            prior to publication.
+          </li>
+        </ul>
+      </Callout>
 
-  <ul style={{ marginTop: 8, paddingLeft: 18 }}>
-    <li>
-      <strong>Informative</strong>: Provided for transparency and reference only. Informative
-      documents do not define requirements, do not certify compliance, and do not determine
-      sentience or capability.
-    </li>
-    <li>
-      <strong>Planned</strong>: Document is announced but not yet released. Content, scope, and
-      versioning are subject to change prior to publication.
-    </li>
-  </ul>
-</div>
-
-
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          marginTop: 24,
-          fontSize: 14,
-        }}
-      >
-        <thead>
-          <tr style={{ textAlign: "left", borderBottom: "1px solid #e7e7e7" }}>
-            <th style={{ padding: "8px 4px" }}>Document ID</th>
-            <th style={{ padding: "8px 4px" }}>Title</th>
-            <th style={{ padding: "8px 4px" }}>Status</th>
-            <th style={{ padding: "8px 4px" }}>Version</th>
-            <th style={{ padding: "8px 4px" }}>Effective date</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {REGISTRY.map((doc) => (
-            <tr key={doc.id} style={{ borderBottom: "1px solid #f0f0f0" }}>
-              <td style={{ padding: "8px 4px", fontFamily: "monospace" }}>
-                {doc.id}
-              </td>
-              <td style={{ padding: "8px 4px" }}>
-                <a
-                  href={doc.href}
-                  style={{
-                    color: "#111",
-                    textDecoration: "none",
-                    fontWeight: 600,
-                  }}
-                >
-                  {doc.title}
-                </a>
-              </td>
-              <td style={{ padding: "8px 4px" }}>{doc.status}</td>
-              <td style={{ padding: "8px 4px" }}>{doc.version}</td>
-              <td style={{ padding: "8px 4px" }}>{doc.effectiveDate}</td>
+      <H2>Published documents</H2>
+      <div style={{ overflowX: "auto", border: "1px solid #e7e7e7", borderRadius: 8 }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
+          <thead>
+            <tr style={{ background: "#fafafa" }}>
+              <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                Document
+              </th>
+              <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                Status
+              </th>
+              <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                Version
+              </th>
+              <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                Effective date
+              </th>
+              <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                Link
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {DOCS.map((doc) => (
+              <tr key={doc.id}>
+                <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                  <div style={{ fontWeight: 650, color: "#111" }}>{doc.title}</div>
+                  <div style={{ color: "#5a5a5a", fontSize: 13, marginTop: 2 }}>{doc.id}</div>
+                  <div style={{ color: "#5a5a5a", fontSize: 13, marginTop: 6 }}>{doc.scopeNote}</div>
+                </td>
+                <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", color: "#5a5a5a" }}>
+                  {doc.status}
+                </td>
+                <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", color: "#5a5a5a" }}>
+                  {doc.version}
+                </td>
+                <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", color: "#5a5a5a" }}>
+                  {doc.effectiveDate}
+                </td>
+                <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                  <a href={doc.href}>View</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <h2 style={{ marginTop: 32 }}>Change logs</h2>
+      <H2 style={{ marginTop: 28 }}>Change logs</H2>
+      <MutedP>
+        Change logs are listed per document. For citation, include document ID, version, effective
+        date, and accessed date.
+      </MutedP>
 
-      {REGISTRY.map((doc) => (
-        <div key={doc.id} style={{ marginTop: 18 }}>
-          <div style={{ fontWeight: 600 }}>
-            {doc.id} — {doc.title}
+      {DOCS.map((doc) => (
+        <section key={`${doc.id}-changes`} style={{ marginTop: 18 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "baseline" }}>
+            <div style={{ fontWeight: 650 }}>{doc.title}</div>
+            <div style={{ color: "#5a5a5a", fontSize: 13 }}>{doc.id}</div>
+            <div style={{ marginLeft: "auto" }}>
+              <a href={doc.href} style={{ fontSize: 13 }}>
+                View document
+              </a>
+            </div>
           </div>
 
-          {doc.changeLog.length === 0 ? (
-            <p style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6 }}>
-              No public change log entries.
-            </p>
-          ) : (
-            <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6 }}>
-              {doc.changeLog.map((c) => (
-                <li key={`${doc.id}-${c.version}-${c.date}`}>
-                  <strong>{c.version}</strong> ({c.date}): {c.summary}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+          <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+            {doc.changes.map((c) => (
+              <li key={`${doc.id}-${c.version}-${c.date}`}>
+                <strong>{c.version}</strong> ({c.date}): {c.summary}
+              </li>
+            ))}
+          </ul>
+        </section>
       ))}
-    </div>
+    </PageWrap>
   );
 }
