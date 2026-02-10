@@ -10,15 +10,46 @@ export default function HomePage() {
   return (
     <PageWrap>
       <div style={{ marginBottom: 24 }}>
-        <h1 style={{ fontSize: 44, letterSpacing: "-0.03em", margin: "0 0 10px" }}>
-          Sentient Index Labs &amp; Technology
-        </h1>
+        {/* Logo + Title */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 14,
+          }}
+        >
+         <img
+  src="/SILT_logo symbol only_2026.svg"
+  alt="Sentient Index Labs & Technology"
+  width={56}
+  height={56}
+  style={{
+    display: "block",
+    width: 56,
+    height: 56,
+    flexShrink: 0,
+  }}
+/>
 
-        <MutedP style={{ fontSize: 16, maxWidth: 760 }}>
-          An institute-style, governance-forward approach to evaluating and documenting advanced AI system behavior.
-          We maintain the <strong>Sentience Evaluation Battery (S.E.B.)</strong> — a structured framework for evidence,
-          traceability, and oversight-oriented reporting.
-        </MutedP>
+
+          <div>
+            <h1
+              style={{
+                fontSize: 44,
+                letterSpacing: "-0.03em",
+                margin: "0 0 10px",
+              }}
+            >
+              Sentient Index Labs &amp; Technology
+            </h1>
+
+            <MutedP style={{ fontSize: 16, maxWidth: 760 }}>
+              An institute-style, governance-forward approach to evaluating and documenting advanced AI system behavior.
+              We maintain the <strong>Sentience Evaluation Battery (S.E.B.)</strong> — a structured framework for evidence,
+              traceability, and oversight-oriented reporting.
+            </MutedP>
+          </div>
+        </div>
 
         <div style={{ marginTop: 16, fontSize: 14, color: "#5a5a5a" }}>
           <a href="/methodology">Read Methodology</a>

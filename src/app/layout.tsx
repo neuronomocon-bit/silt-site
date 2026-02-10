@@ -57,16 +57,18 @@ export default function RootLayout({
               }}
             >
               <img
-                src="/SILT_logo symbol only_2026.svg"
-                alt="Sentient Index Labs & Technology"
-                width={44}
-                height={44}
-                style={{
-                  display: "block",
-                  width: 44,
-                  height: 44,
-                }}
-              />
+  src="/SILT_logo symbol only_2026.svg"
+  alt="Sentient Index Labs & Technology"
+  width={56}
+  height={56}
+  style={{
+    display: "block",
+    width: 56,
+    height: 56,
+    flexShrink: 0,
+  }}
+/>
+
 
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 <a
