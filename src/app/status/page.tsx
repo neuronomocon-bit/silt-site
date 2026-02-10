@@ -1,0 +1,129 @@
+import React from "react";
+import { DocumentHeader } from "@/components/document-header";
+import { Callout } from "@/components/ui";
+
+export const metadata = {
+  title: "Status of the Framework | Sentient Index Labs & Technology",
+  description:
+    "Current maturity, scope, and intended use of the Sentient Index Labs & Technology framework and the Sentience Evaluation Battery (S.E.B.).",
+};
+
+export default function StatusOfFrameworkPage() {
+  return (
+    <article style={{ maxWidth: 760 }}>
+      <DocumentHeader
+        title="Status of the Framework"
+        subtitle="Document ID: SILT-STATUS-001"
+        status="Informative"
+        version="v0.1"
+        effectiveDate="2026-02-09"
+        note="This document is provided for transparency regarding framework maturity and scope. It is informative only and does not define requirements, certify compliance, or determine sentience."
+      />
+
+      <p style={{ marginTop: 12, fontSize: 13, color: "#6a6a6a" }}>
+        Registry entry:{" "}
+        <a href="/registry">Document Registry (SILT-STATUS-001)</a>
+      </p>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Purpose</h2>
+        <p>
+          This page describes the current development status, intended audience,
+          and scope boundaries of the Sentient Index Labs &amp; Technology (SILT)
+          framework, including the Sentience Evaluation Battery (S.E.B.). It is
+          intended to provide clarity for readers, reviewers, and external
+          stakeholders regarding how published materials should be interpreted
+          at this stage.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Current maturity</h2>
+        <p>
+          As of this release, the SILT framework is in an early research and
+          documentation phase. Core terminology, conceptual dimensions, and
+          evaluation intent are being defined and refined. No operational
+          standard, certification program, scoring service, or compliance
+          offering is currently in effect.
+        </p>
+
+        <ul>
+          <li>Methodology documents are descriptive and non-normative</li>
+          <li>The S.E.B. is presented as a conceptual evaluation instrument</li>
+          <li>Public examples are illustrative only</li>
+        </ul>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Intended audience</h2>
+        <p>
+          Materials published under the SILT framework are intended for a
+          professional audience, including:
+        </p>
+
+        <ul>
+          <li>Regulators and policy analysts</li>
+          <li>AI system developers and researchers</li>
+          <li>Governance, risk, and compliance practitioners</li>
+          <li>Academic and standards-oriented reviewers</li>
+        </ul>
+
+        <p>
+          They are not intended for consumer-facing use, marketing claims, or
+          competitive ranking of systems.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Relationship to regulation and standards</h2>
+        <p>
+          References to external regulatory or standards frameworks (including
+          the EU AI Act, NIST AI Risk Management Framework, and related guidance)
+          are provided for contextual alignment only. No claim is made that the
+          SILT framework constitutes compliance with, certification under, or
+          endorsement by any regulatory or standards body.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Explicit scope exclusions</h2>
+        <ul>
+          <li>Determination or certification of sentience</li>
+          <li>Issuance of scores, rankings, or pass/fail judgments</li>
+          <li>Compliance determinations or legal conclusions</li>
+          <li>Replacement of regulatory, ethical, or legal review</li>
+        </ul>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Change management</h2>
+        <p>
+          Documents published under the SILT framework are versioned and may
+          change over time. Revisions, updates, and scope changes are recorded in
+          the Document Registry and associated change logs.
+        </p>
+
+        <p>
+          Readers are encouraged to consult the registry to ensure they are
+          referencing the most current version of any document.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <h2>Future development</h2>
+        <p>
+          Future phases may include expanded methodological detail, structured
+          tooling, and controlled evaluation workflows. Any transition from
+          research documentation to operational use would be announced clearly
+          and accompanied by updated governance and disclosure materials.
+        </p>
+      </section>
+
+      <Callout title="Interpretive note" style={{ marginTop: 32 }}>
+        This document is intended to reduce ambiguity regarding the maturity and
+        interpretive limits of the SILT framework. It should be read alongside
+        the Methodology and Registry pages.
+      </Callout>
+    </article>
+  );
+}
