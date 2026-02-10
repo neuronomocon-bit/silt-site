@@ -2,7 +2,6 @@ import "./globals.css";
 import React from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata = {
   title: "Sentient Index Labs & Technology",
@@ -104,7 +103,6 @@ export default function RootLayout({
             {/* Right side: Nav + Theme Toggle */}
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <SiteNav />
-              <ThemeToggle />
             </div>
           </header>
 

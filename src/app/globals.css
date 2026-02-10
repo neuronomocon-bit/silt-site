@@ -1,13 +1,11 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ===============================
+   Base reset & box model
+   =============================== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -16,75 +14,171 @@ body {
   overflow-x: hidden;
 }
 
+/* ===============================
+   Default (light) theme variables
+   =============================== */
+
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --text-panel: #1a1a1a;
+
+  --border: #e7e7e7;
+
+  /* Links (muted, institutional) */
+  --link: #2f5fd7;
+  --link-hover: #244bb3;
+
+  --pill-bg: #ffffff;
+}
+
+/* ===============================
+   Dark theme variables
+   =============================== */
+
+html[data-theme="dark"] {
+  --bg: #0f0f10;
+  --panel: #151517;
+
+  --text: #e3e3e6;        /* primary reading text */
+  --text-muted: #b8b8bd;  /* secondary text */
+  --text-panel: #111111;  /* text inside white panels */
+
+  --border: #2a2a2e;
+
+  /* Softer links (no neon blue) */
+  --link: #9fb0e8;
+  --link-hover: #c1ccf5;
+
+  --pill-bg: transparent;
+}
+
+/* ===============================
+   Global body styles
+   =============================== */
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Smooth theme transitions */
+html,
+body {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
+
+/* ===============================
+   Typography helpers
+   =============================== */
+
+p,
+li {
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.muted,
+small {
+  color: var(--text-muted);
+}
+
+/* ===============================
+   Links
+   =============================== */
 
 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
+  transition: color 140ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  /* Subtle hover affordance for registry subtitle link */
-a.registry-link {
-  text-decoration: none;
-}
-
-a.registry-link:hover {
+a:hover {
+  color: var(--link-hover);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #5a5a5a;
-  --border: #e7e7e7;
-  --pill-bg: #ffffff;
+/* Registry subtitle hover */
+a.registry-link {
+  color: var(--text-muted);
 }
 
-html[data-theme="dark"] {
-  --bg: #0b0b0c;
-  --text: #f2f2f2;
-  --muted: #b8b8b8;
-  --border: #2a2a2a;
-  --pill-bg: #0f0f10;
-
-}
-html[data-theme="dark"] .site-logo {
-  filter: invert(1) brightness(0.80);
+a.registry-link:hover {
+  color: var(--link-hover);
 }
 
-/* Apply variables globally */
-body {
-  background: var(--bg);
-  color: var(--text);
+/* ===============================
+   Panels / boxes / cards
+   =============================== */
+
+.panel,
+.box,
+strongbox {
+  background: var(--panel);
+  color: var(--text-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  line-height: 1.65;
+}
+/* Panel headings (e.g. "Positioning (public)") */
+.panel h3,
+.panel h4,
+strongbox h3,
+strongbox h4 {
+  color: #2a2a2a;       /* darker for white panels */
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-html,
-body {
-  transition: background-color 160ms ease, color 160ms ease;
+/* Dark mode: keep panel headings strong */
+html[data-theme="dark"] .panel h3,
+html[data-theme="dark"] .panel h4,
+html[data-theme="dark"] strongbox h3,
+html[data-theme="dark"] strongbox h4 {
+  color: #111111;
 }
+
+
+/* Ensure strong text inside panels is crisp */
+.panel strong,
+.box strong,
+strongbox strong {
+  color: var(--text-panel);
+}
+
+/* ===============================
+   Logo handling
+   =============================== */
+
 .site-logo {
-  transition: filter 160ms ease;
+  transition: filter 180ms ease;
 }
 
+/* Invert logo in dark mode, slightly toned down */
+html[data-theme="dark"] .site-logo {
+  filter: invert(1) brightness(0.82);
+}
 
-/* Simple, standards-body button */
+/* ===============================
+   Theme toggle button
+   =============================== */
+
 .theme-toggle {
   border: 1px solid var(--border);
   background: var(--pill-bg);
@@ -97,5 +191,4 @@ body {
 
 .theme-toggle:hover {
   text-decoration: underline;
-}
 }
