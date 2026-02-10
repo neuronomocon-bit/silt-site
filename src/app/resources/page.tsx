@@ -32,26 +32,33 @@ export default function ResourcesPage() {
 
       <MutedP style={{ fontSize: 14, marginTop: 10 }}>
         Registry entry:{" "}
-        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
+        <a
+          href="/registry"
+          style={{
+            color: "var(--text)",
+            textDecoration: "none",
+            fontWeight: 650,
+          }}
+        >
           SILT-RES-001
         </a>
       </MutedP>
 
       <MutedP>
-        This page provides a controlled public index of resources related to the Sentience
-        Evaluation Battery (S.E.B.). Items listed here may include explanatory documents, mapping
-        summaries, and (later) versioned PDFs. Where placeholders are present, they indicate
-        planned publications and do not represent currently released materials.
+        This page provides a controlled public index of resources related to the Sentience Evaluation
+        Battery (S.E.B.). Items listed here may include explanatory documents, mapping summaries, and
+        (later) versioned PDFs. Where placeholders are present, they indicate planned publications and
+        do not represent currently released materials.
       </MutedP>
 
       <StrongBox title="Citation note (recommended)">
         Cite individual documents using the Document Registry when available (Document ID, version,
-        effective date, URL, accessed date). If a resource is later replaced by a versioned PDF,
-        the PDF shall become the preferred citable artifact.
+        effective date, URL, accessed date). If a resource is later replaced by a versioned PDF, the
+        PDF should be treated as the preferred citable artifact.
       </StrongBox>
 
       <H2>Public documents</H2>
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>
           <a href="/methodology">S.E.B. Methodology</a> — Informative overview (web document)
         </li>
@@ -60,6 +67,9 @@ export default function ResourcesPage() {
         </li>
         <li>
           <a href="/registry">Document Registry</a> — Version index and change logs
+        </li>
+        <li>
+          <a href="/status">Status of the Framework</a> — Maturity and scope statement
         </li>
         <li>
           <a href="/disclaimer">Disclaimer</a> — Interpretive limits and non-certification posture
@@ -79,17 +89,18 @@ export default function ResourcesPage() {
         release.
       </MutedP>
 
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>
-          <strong>S.E.B. Overview (PDF)</strong> — Planned: short public brief describing scope and
-          exclusions
+          <strong style={{ color: "var(--text)" }}>S.E.B. Overview (PDF)</strong> — Planned: short public
+          brief describing scope and exclusions
         </li>
         <li>
-          <strong>Governance mapping summary (PDF)</strong> — Planned: conceptual mapping to common
-          governance frameworks (informative)
+          <strong style={{ color: "var(--text)" }}>Governance mapping summary (PDF)</strong> — Planned:
+          conceptual mapping to common governance frameworks (informative)
         </li>
         <li>
-          <strong>Change log digest (PDF)</strong> — Planned: periodic consolidated change summary
+          <strong style={{ color: "var(--text)" }}>Change log digest (PDF)</strong> — Planned: periodic
+          consolidated change summary
         </li>
       </ul>
 
@@ -99,17 +110,17 @@ export default function ResourcesPage() {
         endorsement, adequacy, or compliance.
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
-          <strong>v0.1</strong> (2026-02-07): Initial public resources page with placeholders for
-          versioned publications and supporting materials.
+          <strong style={{ color: "var(--text)" }}>v0.1</strong> (2026-02-07): Initial public resources
+          page with placeholders for versioned publications and supporting materials.
         </li>
         <li>
-          <strong>v0.1.1</strong> (2026-02-08): Added Privacy Policy and Terms of Use to listed public
-          documents. No changes to scope or interpretive posture.
+          <strong style={{ color: "var(--text)" }}>v0.1.1</strong> (2026-02-08): Added Privacy Policy and
+          Terms of Use to listed public documents. No changes to scope or interpretive posture.
         </li>
       </ul>
 
