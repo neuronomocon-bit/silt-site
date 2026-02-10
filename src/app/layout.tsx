@@ -48,62 +48,65 @@ export default function RootLayout({
               gap: 12,
             }}
           >
-            {/* Logo + identity */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 14,
-              }}
-            >
-              <img
-                 src="/SILT_logo symbol only_2026.svg"
-  alt="Sentient Index Labs & Technology"
-  width={56}
-  height={56}
-  className="site-logo"
-  style={{
-    display: "block",
-    width: 56,
-    height: 56,
+            {/* Left: Logo + identity (no nested anchors) */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              {/* Home link wraps logo + name only */}
+              <a
+                href="/"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  textDecoration: "none",
+                  color: "inherit",
                 }}
-              />
-
-              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <a
-                  href="/"
+                aria-label="Go to home page"
+              >
+                <img
+                  src="/SILT_logo symbol only_2026.svg"
+                  alt="Sentient Index Labs & Technology"
+                  width={56}
+                  height={56}
+                  className="site-logo"
                   style={{
-                    color: "var(--text)",
+                    display: "block",
+                    width: 56,
+                    height: 56,
+                    flexShrink: 0,
+                  }}
+                />
+
+                <div
+                  style={{
                     fontWeight: 650,
                     letterSpacing: "-0.01em",
                     fontSize: 16,
                     lineHeight: 1.2,
                     whiteSpace: "nowrap",
-                    textDecoration: "none",
                   }}
                 >
                   Sentient Index Labs &amp; Technology
-                </a>
+                </div>
+              </a>
 
-                <a
-                  href="/registry"
-                  className="registry-link"
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 13,
-                    lineHeight: 1.2,
-                    textDecoration: "none",
-                  }}
-                >
-                  Public documentation — Sentience Evaluation Battery (S.E.B.)
-                </a>
-              </div>
+              {/* Subtitle stays its own link to Registry */}
+              <a
+                href="/registry"
+                className="registry-link"
+                style={{
+                  color: "var(--text-muted)",
+                  fontSize: 13,
+                  lineHeight: 1.2,
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Public documentation — Sentience Evaluation Battery (S.E.B.)
+              </a>
             </div>
 
-            {/* Right side: Nav + Theme Toggle */}
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <SiteNav />
-            </div>
+            {/* Right: Primary navigation */}
+            <SiteNav />
           </header>
 
           {/* Page content */}
