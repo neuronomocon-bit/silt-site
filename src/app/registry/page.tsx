@@ -40,11 +40,7 @@ const DOCS: Doc[] = [
     scopeNote:
       "High-level descriptive overview of the Sentience Evaluation Battery (S.E.B.). Non-normative; does not define requirements or determinations.",
     changeLog: [
-      {
-        version: "v0.1",
-        date: "2026-02-08",
-        summary: "Initial publication of the methodology overview.",
-      },
+      { version: "v0.1", date: "2026-02-08", summary: "Initial publication of the methodology overview." },
     ],
   },
   {
@@ -89,15 +85,8 @@ const DOCS: Doc[] = [
     version: "v0.0",
     effectiveDate: "—",
     href: "/seb",
-    scopeNote:
-      "Placeholder page for a future embedded dashboard view. Not currently operational.",
-    changeLog: [
-      {
-        version: "v0.0",
-        date: "2026-02-08",
-        summary: "Planned item listed; no released content.",
-      },
-    ],
+    scopeNote: "Placeholder page for a future embedded dashboard view. Not currently operational.",
+    changeLog: [{ version: "v0.0", date: "2026-02-08", summary: "Planned item listed; no released content." }],
   },
   {
     id: "SILT-RES-001",
@@ -106,14 +95,9 @@ const DOCS: Doc[] = [
     version: "v0.1.1",
     effectiveDate: "2026-02-08",
     href: "/resources",
-    scopeNote:
-      "Public index of resources and placeholders for planned publications. Informative only.",
+    scopeNote: "Public index of resources and placeholders for planned publications. Informative only.",
     changeLog: [
-      {
-        version: "v0.1",
-        date: "2026-02-07",
-        summary: "Initial resources listing and placeholder publications.",
-      },
+      { version: "v0.1", date: "2026-02-07", summary: "Initial resources listing and placeholder publications." },
       {
         version: "v0.1.1",
         date: "2026-02-08",
@@ -129,13 +113,7 @@ const DOCS: Doc[] = [
     effectiveDate: "2026-02-08",
     href: "/privacy",
     scopeNote: "Privacy and data handling posture for this website. Informative only.",
-    changeLog: [
-      {
-        version: "v0.1",
-        date: "2026-02-08",
-        summary: "Initial publication.",
-      },
-    ],
+    changeLog: [{ version: "v0.1", date: "2026-02-08", summary: "Initial publication." }],
   },
   {
     id: "SILT-LEGAL-TERM-001",
@@ -145,13 +123,7 @@ const DOCS: Doc[] = [
     effectiveDate: "2026-02-08",
     href: "/terms",
     scopeNote: "Website terms and limitations. Informative only.",
-    changeLog: [
-      {
-        version: "v0.1",
-        date: "2026-02-08",
-        summary: "Initial publication.",
-      },
-    ],
+    changeLog: [{ version: "v0.1", date: "2026-02-08", summary: "Initial publication." }],
   },
   {
     id: "SILT-LEGAL-DISC-001",
@@ -161,13 +133,7 @@ const DOCS: Doc[] = [
     effectiveDate: "2026-02-08",
     href: "/disclaimer",
     scopeNote: "Interpretive limits and non-certification posture. Informative only.",
-    changeLog: [
-      {
-        version: "v0.1",
-        date: "2026-02-08",
-        summary: "Initial publication.",
-      },
-    ],
+    changeLog: [{ version: "v0.1", date: "2026-02-08", summary: "Initial publication." }],
   },
 ];
 
@@ -177,21 +143,20 @@ function StatusPill({ status }: { status: Status }) {
     alignItems: "center",
     padding: "2px 10px",
     borderRadius: 999,
-    border: "1px solid #d7d7d7",
+    border: "1px solid var(--border)",
     fontSize: 12,
-    color: "#5a5a5a",
-    background: "#fff",
+    color: "var(--text-muted)",
+    background: "var(--panel)",
     whiteSpace: "nowrap",
   };
 
-  if (status === "Planned") return <span style={base}>Planned</span>;
-  if (status === "Normative") return <span style={base}>Normative</span>;
-  return <span style={base}>Informative</span>;
+  // Keep subtle, but let the label itself communicate meaning.
+  return <span style={base}>{status}</span>;
 }
 
 export default function RegistryPage() {
   return (
-    <article style={{ maxWidth: 980 }}>
+    <article>
       <DocumentHeader
         title="Document Registry"
         subtitle="Public registry of SILT documents and version history"
@@ -203,7 +168,7 @@ export default function RegistryPage() {
 
       <section style={{ marginTop: 18 }}>
         <h2 style={{ margin: "0 0 8px" }}>Legend</h2>
-        <ul style={{ marginTop: 10, paddingLeft: 18, color: "#5a5a5a", lineHeight: 1.6 }}>
+        <ul style={{ marginTop: 10, paddingLeft: 18, color: "var(--text-muted)", lineHeight: 1.6 }}>
           <li>
             <strong>Informative</strong>: reference material only; does not define requirements,
             certify compliance, or determine sentience.
@@ -222,23 +187,23 @@ export default function RegistryPage() {
       <section style={{ marginTop: 22 }}>
         <h2 style={{ margin: "0 0 10px" }}>Published documents</h2>
 
-        <div style={{ overflowX: "auto", border: "1px solid #e7e7e7", borderRadius: 10 }}>
+        <div style={{ overflowX: "auto", border: "1px solid var(--border)", borderRadius: 10 }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
             <thead>
-              <tr style={{ background: "#fafafa" }}>
-                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+              <tr style={{ background: "rgba(0,0,0,0.03)" }}>
+                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid var(--border)" }}>
                   Document
                 </th>
-                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid var(--border)" }}>
                   Status
                 </th>
-                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid var(--border)" }}>
                   Version
                 </th>
-                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid var(--border)" }}>
                   Effective
                 </th>
-                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid #e7e7e7" }}>
+                <th style={{ textAlign: "left", padding: 12, borderBottom: "1px solid var(--border)" }}>
                   Link
                 </th>
               </tr>
@@ -250,16 +215,16 @@ export default function RegistryPage() {
                   <td
                     style={{
                       padding: 12,
-                      borderBottom: "1px solid #e7e7e7",
+                      borderBottom: "1px solid var(--border)",
                       verticalAlign: "top",
                     }}
                   >
-                    <div style={{ fontWeight: 650, color: "#111" }}>{doc.title}</div>
-                    <div style={{ marginTop: 2, color: "#5a5a5a", fontSize: 13 }}>{doc.id}</div>
+                    <div style={{ fontWeight: 650, color: "var(--text)" }}>{doc.title}</div>
+                    <div style={{ marginTop: 2, color: "var(--text-muted)", fontSize: 13 }}>{doc.id}</div>
                     <div
                       style={{
                         marginTop: 8,
-                        color: "#5a5a5a",
+                        color: "var(--text-muted)",
                         fontSize: 13,
                         lineHeight: 1.55,
                       }}
@@ -268,21 +233,15 @@ export default function RegistryPage() {
                     </div>
                   </td>
 
-                  <td
-                    style={{
-                      padding: 12,
-                      borderBottom: "1px solid #e7e7e7",
-                      verticalAlign: "top",
-                    }}
-                  >
+                  <td style={{ padding: 12, borderBottom: "1px solid var(--border)", verticalAlign: "top" }}>
                     <StatusPill status={doc.status} />
                   </td>
 
                   <td
                     style={{
                       padding: 12,
-                      borderBottom: "1px solid #e7e7e7",
-                      color: "#5a5a5a",
+                      borderBottom: "1px solid var(--border)",
+                      color: "var(--text-muted)",
                       verticalAlign: "top",
                     }}
                   >
@@ -292,16 +251,16 @@ export default function RegistryPage() {
                   <td
                     style={{
                       padding: 12,
-                      borderBottom: "1px solid #e7e7e7",
-                      color: "#5a5a5a",
+                      borderBottom: "1px solid var(--border)",
+                      color: "var(--text-muted)",
                       verticalAlign: "top",
                     }}
                   >
                     {doc.effectiveDate}
                   </td>
 
-                  <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", verticalAlign: "top" }}>
-                    <a href={doc.href} style={{ textDecoration: "none" }}>
+                  <td style={{ padding: 12, borderBottom: "1px solid var(--border)", verticalAlign: "top" }}>
+                    <a href={doc.href} style={{ textDecoration: "none", fontWeight: 600 }}>
                       View
                     </a>
                   </td>
@@ -314,7 +273,7 @@ export default function RegistryPage() {
 
       <section style={{ marginTop: 28 }}>
         <h2 style={{ margin: "0 0 8px" }}>Change logs (per document)</h2>
-        <p style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, marginTop: 0 }}>
+        <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, marginTop: 0 }}>
           For citation, include document ID, version, effective date, and accessed date. This section
           lists document-specific change summaries.
         </p>
@@ -322,19 +281,19 @@ export default function RegistryPage() {
         {DOCS.map((doc) => (
           <section key={`${doc.id}-changelog`} style={{ marginTop: 18 }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "baseline" }}>
-              <div style={{ fontWeight: 650 }}>{doc.title}</div>
-              <div style={{ color: "#5a5a5a", fontSize: 13 }}>{doc.id}</div>
+              <div style={{ fontWeight: 650, color: "var(--text)" }}>{doc.title}</div>
+              <div style={{ color: "var(--text-muted)", fontSize: 13 }}>{doc.id}</div>
               <div style={{ marginLeft: "auto" }}>
-                <a href={doc.href} style={{ fontSize: 13, textDecoration: "none" }}>
+                <a href={doc.href} style={{ fontSize: 13, textDecoration: "none", fontWeight: 600 }}>
                   View document
                 </a>
               </div>
             </div>
 
-            <ul style={{ marginTop: 8, paddingLeft: 18, color: "#5a5a5a", lineHeight: 1.6 }}>
+            <ul style={{ marginTop: 8, paddingLeft: 18, color: "var(--text-muted)", lineHeight: 1.6 }}>
               {doc.changeLog.map((c) => (
                 <li key={`${doc.id}-${c.version}-${c.date}`}>
-                  <strong>{c.version}</strong> ({c.date}): {c.summary}
+                  <strong style={{ color: "var(--text)" }}>{c.version}</strong> ({c.date}): {c.summary}
                 </li>
               ))}
             </ul>
