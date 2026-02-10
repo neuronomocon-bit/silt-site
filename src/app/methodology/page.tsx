@@ -39,7 +39,7 @@ export default function MethodologyPage() {
 
       <MutedP>
         This page describes the high-level structure and intended use of the Sentience Evaluation
-        Battery (S.E.B.). It is written for oversight, governance, and review contexts, and is
+        Battery (SEB). It is written for oversight, governance, and review contexts, and is
         intentionally limited to claims that can be supported through documentation and observable
         system behavior.
       </MutedP>
