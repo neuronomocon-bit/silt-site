@@ -75,6 +75,15 @@ body {
   color: var(--text);
 }
 
+html,
+body {
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.site-logo {
+  transition: filter 160ms ease;
+}
+
+
 /* Simple, standards-body button */
 .theme-toggle {
   border: 1px solid var(--border);
