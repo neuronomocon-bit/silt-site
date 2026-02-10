@@ -1,3 +1,4 @@
+import { LOGO_SIZE } from "@/lib/constants";
 import "./globals.css";
 import React from "react";
 import { SiteFooter } from "@/components/site-footer";
@@ -56,18 +57,19 @@ export default function RootLayout({
                 gap: 14,
               }}
             >
-              <img
+<img
   src="/SILT_logo symbol only_2026.svg"
   alt="Sentient Index Labs & Technology"
-  width={56}
-  height={56}
+  width={LOGO_SIZE}
+  height={LOGO_SIZE}
   style={{
     display: "block",
-    width: 56,
-    height: 56,
+    width: LOGO_SIZE,
+    height: LOGO_SIZE,
     flexShrink: 0,
   }}
 />
+
 
 
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
