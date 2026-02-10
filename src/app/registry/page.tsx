@@ -20,7 +20,7 @@ type Doc = {
   title: string;
   status: Status;
   version: string;
-  effectiveDate: string; // YYYY-MM-DD
+  effectiveDate: string; // YYYY-MM-DD or "—"
   href: string;
   scopeNote: string;
   changeLog: Change[];
@@ -29,8 +29,6 @@ type Doc = {
 const REG_VERSION = "v0.1";
 const REG_EFFECTIVE = "2026-02-09";
 
-// Keep these IDs stable and unique.
-// Update versions/dates when you change documents.
 const DOCS: Doc[] = [
   {
     id: "SILT-SEB-METH-001",
@@ -130,8 +128,7 @@ const DOCS: Doc[] = [
     version: "v0.1",
     effectiveDate: "2026-02-08",
     href: "/privacy",
-    scopeNote:
-      "Privacy and data handling posture for this website. Informative only.",
+    scopeNote: "Privacy and data handling posture for this website. Informative only.",
     changeLog: [
       {
         version: "v0.1",
@@ -147,8 +144,7 @@ const DOCS: Doc[] = [
     version: "v0.1",
     effectiveDate: "2026-02-08",
     href: "/terms",
-    scopeNote:
-      "Website terms and limitations. Informative only.",
+    scopeNote: "Website terms and limitations. Informative only.",
     changeLog: [
       {
         version: "v0.1",
@@ -164,8 +160,7 @@ const DOCS: Doc[] = [
     version: "v0.1",
     effectiveDate: "2026-02-08",
     href: "/disclaimer",
-    scopeNote:
-      "Interpretive limits and non-certification posture. Informative only.",
+    scopeNote: "Interpretive limits and non-certification posture. Informative only.",
     changeLog: [
       {
         version: "v0.1",
@@ -207,22 +202,25 @@ export default function RegistryPage() {
       />
 
       <section style={{ marginTop: 18 }}>
-        <h2>Legend</h2>
+        <h2 style={{ margin: "0 0 8px" }}>Legend</h2>
         <ul style={{ marginTop: 10, paddingLeft: 18, color: "#5a5a5a", lineHeight: 1.6 }}>
           <li>
-            <strong>Informative</strong>: Reference material only; does not define requirements or determinations.
+            <strong>Informative</strong>: reference material only; does not define requirements,
+            certify compliance, or determine sentience.
           </li>
           <li>
-            <strong>Planned</strong>: Announced but not released; content and scope may change before publication.
+            <strong>Planned</strong>: announced but not released; content and scope may change prior
+            to publication.
           </li>
           <li>
-            <strong>Normative</strong>: (Reserved) Would define requirements if used. Not currently used for public SILT materials.
+            <strong>Normative</strong>: reserved for requirements language; not currently used for
+            public SILT materials.
           </li>
         </ul>
       </section>
 
       <section style={{ marginTop: 22 }}>
-        <h2>Published documents</h2>
+        <h2 style={{ margin: "0 0 10px" }}>Published documents</h2>
 
         <div style={{ overflowX: "auto", border: "1px solid #e7e7e7", borderRadius: 10 }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
@@ -249,23 +247,56 @@ export default function RegistryPage() {
             <tbody>
               {DOCS.map((doc) => (
                 <tr key={doc.id}>
-                  <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", verticalAlign: "top" }}>
-                    <div style={{ fontWeight: 650 }}>{doc.title}</div>
+                  <td
+                    style={{
+                      padding: 12,
+                      borderBottom: "1px solid #e7e7e7",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    <div style={{ fontWeight: 650, color: "#111" }}>{doc.title}</div>
                     <div style={{ marginTop: 2, color: "#5a5a5a", fontSize: 13 }}>{doc.id}</div>
-                    <div style={{ marginTop: 8, color: "#5a5a5a", fontSize: 13, lineHeight: 1.55 }}>
+                    <div
+                      style={{
+                        marginTop: 8,
+                        color: "#5a5a5a",
+                        fontSize: 13,
+                        lineHeight: 1.55,
+                      }}
+                    >
                       {doc.scopeNote}
                     </div>
                   </td>
 
-                  <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", verticalAlign: "top" }}>
+                  <td
+                    style={{
+                      padding: 12,
+                      borderBottom: "1px solid #e7e7e7",
+                      verticalAlign: "top",
+                    }}
+                  >
                     <StatusPill status={doc.status} />
                   </td>
 
-                  <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", color: "#5a5a5a", verticalAlign: "top" }}>
+                  <td
+                    style={{
+                      padding: 12,
+                      borderBottom: "1px solid #e7e7e7",
+                      color: "#5a5a5a",
+                      verticalAlign: "top",
+                    }}
+                  >
                     {doc.version}
                   </td>
 
-                  <td style={{ padding: 12, borderBottom: "1px solid #e7e7e7", color: "#5a5a5a", verticalAlign: "top" }}>
+                  <td
+                    style={{
+                      padding: 12,
+                      borderBottom: "1px solid #e7e7e7",
+                      color: "#5a5a5a",
+                      verticalAlign: "top",
+                    }}
+                  >
                     {doc.effectiveDate}
                   </td>
 
@@ -282,10 +313,10 @@ export default function RegistryPage() {
       </section>
 
       <section style={{ marginTop: 28 }}>
-        <h2>Change logs (per document)</h2>
-        <p style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6 }}>
-          For citation, include document ID, version, effective date, and accessed date. This page lists
-          document-specific change summaries.
+        <h2 style={{ margin: "0 0 8px" }}>Change logs (per document)</h2>
+        <p style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, marginTop: 0 }}>
+          For citation, include document ID, version, effective date, and accessed date. This section
+          lists document-specific change summaries.
         </p>
 
         {DOCS.map((doc) => (
