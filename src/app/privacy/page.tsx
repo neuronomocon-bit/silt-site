@@ -7,6 +7,7 @@ export const metadata = {
     "Privacy policy describing data handling for the Sentient Index Labs & Technology public website.",
 };
 
+const DOC_ID = "SILT-LEGAL-PRIV-001";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-08";
 
@@ -15,7 +16,7 @@ export default function PrivacyPage() {
     <PageWrap>
       <DocumentHeader
         title="Privacy Policy"
-        subtitle="Document ID: SILT-PRIV-001 · Website data handling statement"
+        subtitle={`Document ID: ${DOC_ID} · Website data handling statement`}
         status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
@@ -31,8 +32,15 @@ export default function PrivacyPage() {
 
       <MutedP style={{ fontSize: 14, marginTop: 10 }}>
         Registry entry:{" "}
-        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
-          SILT-PRIV-001
+        <a
+          href="/registry"
+          style={{
+            color: "var(--text)",
+            textDecoration: "none",
+            fontWeight: 650,
+          }}
+        >
+          {DOC_ID}
         </a>
       </MutedP>
 
@@ -44,6 +52,7 @@ export default function PrivacyPage() {
       </MutedP>
 
       <H2>Information we collect</H2>
+
       <StrongBox title="Site usage data (if enabled)">
         We may collect limited technical information about visits to this website (for example:
         browser type, approximate location at a city/region level, referring page, and pages viewed)
@@ -59,7 +68,7 @@ export default function PrivacyPage() {
       </StrongBox>
 
       <H2>How we use information</H2>
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>Operate, maintain, and secure the website</li>
         <li>Respond to inquiries and communications you initiate</li>
         <li>Improve content quality and usability</li>
@@ -108,12 +117,13 @@ export default function PrivacyPage() {
         Document Registry.
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
-          <strong>v0.1</strong> (2026-02-08): Initial public privacy policy for this website.
+          <strong style={{ color: "var(--text)" }}>v0.1</strong> (2026-02-08): Initial public privacy
+          policy for this website.
         </li>
       </ul>
 
