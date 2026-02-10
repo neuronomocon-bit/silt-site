@@ -1,4 +1,3 @@
-import { LOGO_SIZE } from "@/lib/constants";
 import { H2, MutedP, PageWrap, StrongBox } from "@/components/ui";
 
 export const metadata = {
@@ -20,14 +19,15 @@ export default function HomePage() {
           }}
         >
          <img
-   src="/SILT_logo symbol only_2026.svg"
+    src="/SILT_logo symbol only_2026.svg"
   alt="Sentient Index Labs & Technology"
-  width={LOGO_SIZE}
-  height={LOGO_SIZE}
+  width={56}
+  height={56}
+  className="site-logo"
   style={{
     display: "block",
-    width: LOGO_SIZE,
-    height: LOGO_SIZE,
+    width: 56,
+    height: 56,
     flexShrink: 0,
   }}
 />
