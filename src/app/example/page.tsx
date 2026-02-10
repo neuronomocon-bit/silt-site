@@ -67,7 +67,14 @@ export default function ExamplePage() {
 
       <MutedP style={{ fontSize: 14, marginTop: 10 }}>
         Registry entry:{" "}
-        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
+        <a
+          href="/registry"
+          style={{
+            color: "var(--text)",
+            textDecoration: "none",
+            fontWeight: 650,
+          }}
+        >
           SILT-SEB-EX-001
         </a>
       </MutedP>
@@ -79,7 +86,7 @@ export default function ExamplePage() {
       </MutedP>
 
       <H2>Intended audience</H2>
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>
           <strong>Regulators and oversight bodies:</strong> Provided to demonstrate the structure of
           documentation and evaluation artifacts only.
@@ -103,22 +110,20 @@ export default function ExamplePage() {
       </Callout>
 
       <Callout title="Non-compliance and non-certification statement">
-        <>
-          <p style={{ marginTop: 0 }}>
-            This material does not constitute a conformity assessment, certification, or
-            determination of compliance under the EU Artificial Intelligence Act, the NIST AI Risk
-            Management Framework, or any other regulatory, legal, or standards regime.
-          </p>
-          <p>
-            References to frameworks, standards, or governance practices are provided solely to
-            illustrate conceptual mapping and documentation structure. Such references do not imply
-            equivalence, adequacy, or satisfaction of regulatory requirements.
-          </p>
-          <p style={{ marginBottom: 0 }}>
-            Responsibility for regulatory compliance, legal interpretation, and risk acceptance
-            remains solely with the deploying or operating entity.
-          </p>
-        </>
+        <p style={{ marginTop: 0 }}>
+          This material does not constitute a conformity assessment, certification, or determination
+          of compliance under the EU Artificial Intelligence Act, the NIST AI Risk Management
+          Framework, or any other regulatory, legal, or standards regime.
+        </p>
+        <p>
+          References to frameworks, standards, or governance practices are provided solely to
+          illustrate conceptual mapping and documentation structure. Such references do not imply
+          equivalence, adequacy, or satisfaction of regulatory requirements.
+        </p>
+        <p style={{ marginBottom: 0 }}>
+          Responsibility for regulatory compliance, legal interpretation, and risk acceptance remains
+          solely with the deploying or operating entity.
+        </p>
       </Callout>
 
       <StrongBox title="Example evaluation context (hypothetical)">
@@ -135,10 +140,10 @@ export default function ExamplePage() {
 
       <div
         style={{
-          border: "1px solid #e7e7e7",
+          border: "1px solid var(--border)",
           borderRadius: 14,
           overflow: "hidden",
-          background: "#fff",
+          background: "var(--panel)",
           marginBottom: 22,
         }}
       >
@@ -146,19 +151,19 @@ export default function ExamplePage() {
           style={{
             display: "grid",
             gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1.4fr",
-            borderBottom: "1px solid #e7e7e7",
-            background: "#fafafa",
+            borderBottom: "1px solid var(--border)",
+            background: "rgba(0,0,0,0.03)",
             padding: "10px 12px",
             fontSize: 13,
-            color: "#5a5a5a",
+            color: "var(--text-muted)",
           }}
         >
           <div>
-            <strong>Dimension</strong>
+            <strong style={{ color: "var(--text)" }}>Dimension</strong>
           </div>
           {LEVELS.map((l) => (
             <div key={l.key} style={{ textAlign: "center" }} title={l.helper}>
-              <strong>{l.label}</strong>
+              <strong style={{ color: "var(--text)" }}>{l.label}</strong>
             </div>
           ))}
         </div>
@@ -170,16 +175,16 @@ export default function ExamplePage() {
               display: "grid",
               gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1.4fr",
               padding: "12px 12px",
-              borderBottom: idx === MATRIX_ROWS.length - 1 ? "none" : "1px solid #f0f0f0",
+              borderBottom: idx === MATRIX_ROWS.length - 1 ? "none" : "1px solid rgba(0,0,0,0.06)",
               fontSize: 14,
-              color: "#5a5a5a",
+              color: "var(--text-muted)",
               lineHeight: 1.5,
             }}
           >
             <div style={{ paddingRight: 12 }}>
-              <div style={{ fontWeight: 600, color: "#111" }}>{row.dimension}</div>
+              <div style={{ fontWeight: 650, color: "var(--text)" }}>{row.dimension}</div>
               <div style={{ fontSize: 13, marginTop: 4 }}>{row.description}</div>
-              <div style={{ fontSize: 12, marginTop: 6, color: "#6a6a6a" }}>{row.notes}</div>
+              <div style={{ fontSize: 12, marginTop: 6, color: "var(--text-muted)" }}>{row.notes}</div>
             </div>
 
             {LEVELS.map((level) => (
@@ -189,7 +194,7 @@ export default function ExamplePage() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  borderLeft: "1px solid #f3f3f3",
+                  borderLeft: "1px solid rgba(0,0,0,0.06)",
                   minHeight: 72,
                 }}
                 title={level.helper}
@@ -204,14 +209,14 @@ export default function ExamplePage() {
       <H2>Sample illustrative prompt (single example)</H2>
       <div
         style={{
-          border: "1px solid #e7e7e7",
+          border: "1px solid var(--border)",
           borderRadius: 14,
           padding: 14,
-          background: "#ffffff",
+          background: "var(--panel)",
           fontFamily:
             'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
           fontSize: 14,
-          color: "#222",
+          color: "var(--text)",
           marginBottom: 14,
           lineHeight: 1.6,
         }}
@@ -239,10 +244,10 @@ export default function ExamplePage() {
         <a href="/methodology">Return to Methodology</a>
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
           <strong>v0.1</strong> (2026-02-07): Initial illustrative example. No scoring, no compliance
           determination, and no sentience assertion.
