@@ -7,6 +7,7 @@ export const metadata = {
     "Terms of use describing acceptable use and limitations for the Sentient Index Labs & Technology public website.",
 };
 
+const DOC_ID = "SILT-LEGAL-TERM-001";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-08";
 
@@ -15,45 +16,54 @@ export default function TermsPage() {
     <PageWrap>
       <DocumentHeader
         title="Terms of Use"
-        subtitle="Document ID: SILT-TERM-001 · Website terms and limitations"
+        subtitle={`Document ID: ${DOC_ID} · Website terms and limitations`}
         status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
-        note="These Terms apply to use of this website and its public documents. They are not legal advice."
+        note="These Terms apply to use of this website and its public documents. They are informative and do not constitute legal advice."
       />
 
       <Callout title="Informative document">
         <p style={{ margin: 0 }}>
           This page is an <strong>informative</strong> public document. It provides general website
-          terms and does not provide legal advice.
+          terms and does not constitute legal advice.
         </p>
       </Callout>
 
       <MutedP style={{ fontSize: 14, marginTop: 10 }}>
         Registry entry:{" "}
-        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
-          SILT-TERM-001
+        <a
+          href="/registry"
+          style={{
+            color: "var(--text)",
+            textDecoration: "none",
+            fontWeight: 650,
+          }}
+        >
+          {DOC_ID}
         </a>
       </MutedP>
 
       <MutedP>
         By accessing or using this website, you agree to these Terms of Use. If you do not agree,
-        do not use the website. These Terms apply to the public documentation and materials made
-        available on this site.
+        you should not use the website. These Terms apply to the public documentation and materials
+        made available on this site.
       </MutedP>
 
       <H2>Permitted use</H2>
       <StrongBox title="Reference and citation">
         You may access, read, and cite public documents on this website for informational purposes.
-        You may link to pages using their stable URLs and reference document identifiers and
-        versions shown in the Document Registry.
+        You may link to pages using their stable URLs and reference document identifiers and versions
+        shown in the Document Registry.
       </StrongBox>
 
       <H2>Prohibited use</H2>
-      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>Attempting to disrupt, damage, or gain unauthorized access to the website</li>
         <li>Using the website to transmit malware, spam, or abusive content</li>
-        <li>Misrepresenting SILT materials as certification, compliance determinations, or legal advice</li>
+        <li>
+          Misrepresenting SILT materials as certification, compliance determinations, or legal advice
+        </li>
         <li>Using illustrative examples as benchmarking or comparative scoring tools</li>
       </ul>
 
@@ -68,8 +78,8 @@ export default function TermsPage() {
       <H2>Non-certification posture</H2>
       <MutedP>
         Nothing on this website constitutes certification, approval, or a compliance determination
-        under any law, regulation, or standard. References to frameworks (including EU AI Act, NIST
-        AI RMF, ISO/IEC, or similar) are provided for context only and do not imply adequacy or
+        under any law, regulation, or standard. References to frameworks (including the EU AI Act,
+        NIST AI RMF, ISO/IEC, or similar) are provided for context only and do not imply adequacy or
         equivalence.
       </MutedP>
 
@@ -87,12 +97,13 @@ export default function TermsPage() {
         Document Registry.
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
-          <strong>v0.1</strong> (2026-02-08): Initial public terms of use for this website.
+          <strong style={{ color: "var(--text)" }}>v0.1</strong> (2026-02-08): Initial public terms of
+          use for this website.
         </li>
       </ul>
 
