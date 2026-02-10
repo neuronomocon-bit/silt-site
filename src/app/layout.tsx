@@ -2,6 +2,7 @@ import "./globals.css";
 import React from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata = {
   title: "Sentient Index Labs & Technology",
@@ -19,8 +20,8 @@ export default function RootLayout({
       <body
         style={{
           margin: 0,
-          background: "#ffffff",
-          color: "#111111",
+          background: "var(--bg)",
+          color: "var(--text)",
           fontFamily:
             '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
         }}
@@ -40,7 +41,7 @@ export default function RootLayout({
             style={{
               paddingBottom: 10,
               marginBottom: 14,
-              borderBottom: "1px solid #e7e7e7",
+              borderBottom: "1px solid var(--border)",
               display: "flex",
               flexWrap: "wrap",
               alignItems: "center",
@@ -48,7 +49,7 @@ export default function RootLayout({
               gap: 12,
             }}
           >
-            {/* Logo + identity (NO nested anchors) */}
+            {/* Logo + identity */}
             <div
               style={{
                 display: "flex",
@@ -57,14 +58,15 @@ export default function RootLayout({
               }}
             >
               <img
-                src="/SILT_logo symbol only_2026.svg"
-                alt="Sentient Index Labs & Technology"
-                width={44}
-                height={44}
-                style={{
-                  display: "block",
-                  width: 56,
-                  height: 56,
+                 src="/SILT_logo symbol only_2026.svg"
+  alt="Sentient Index Labs & Technology"
+  width={56}
+  height={56}
+  className="site-logo"
+  style={{
+    display: "block",
+    width: 56,
+    height: 56,
                 }}
               />
 
@@ -72,7 +74,7 @@ export default function RootLayout({
                 <a
                   href="/"
                   style={{
-                    color: "#111",
+                    color: "var(--text)",
                     fontWeight: 650,
                     letterSpacing: "-0.01em",
                     fontSize: 16,
@@ -85,21 +87,25 @@ export default function RootLayout({
                 </a>
 
                 <a
-  href="/registry"
-  className="registry-link"
-  style={{
-    color: "#6a6a6a",
-    fontSize: 13,
-    lineHeight: 1.2,
-  }}
->
-  Public documentation — Sentience Evaluation Battery (S.E.B.)
-</a>
+                  href="/registry"
+                  className="registry-link"
+                  style={{
+                    color: "var(--muted)",
+                    fontSize: 13,
+                    lineHeight: 1.2,
+                    textDecoration: "none",
+                  }}
+                >
+                  Public documentation — Sentience Evaluation Battery (S.E.B.)
+                </a>
               </div>
             </div>
 
-            {/* Primary navigation (client component) */}
-            <SiteNav />
+            {/* Right side: Nav + Theme Toggle */}
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <SiteNav />
+              <ThemeToggle />
+            </div>
           </header>
 
           {/* Page content */}
