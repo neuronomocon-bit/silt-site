@@ -7,6 +7,7 @@ export const metadata = {
     "Interpretive limits, non-certification posture, and non-determination statement for public SILT documents, including S.E.B.",
 };
 
+const DOC_ID = "SILT-LEGAL-DISC-001";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-07";
 
@@ -15,7 +16,7 @@ export default function DisclaimerPage() {
     <PageWrap>
       <DocumentHeader
         title="Disclaimer"
-        subtitle="Document ID: SILT-DISC-001 · Interpretive limits and non-certification posture"
+        subtitle={`Document ID: ${DOC_ID} · Interpretive limits and non-certification posture`}
         status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
@@ -25,27 +26,34 @@ export default function DisclaimerPage() {
       <Callout title="Informative document">
         <p style={{ margin: 0 }}>
           This page is an <strong>informative</strong> public document. It describes interpretive
-          limits and does not provide legal advice.
+          limits and does not constitute legal advice.
         </p>
       </Callout>
 
       <MutedP style={{ fontSize: 14, marginTop: 10 }}>
         Registry entry:{" "}
-        <a href="/registry" style={{ color: "#111", textDecoration: "none", fontWeight: 600 }}>
-          SILT-DISC-001
+        <a
+          href="/registry"
+          style={{
+            color: "var(--text)",
+            textDecoration: "none",
+            fontWeight: 650,
+          }}
+        >
+          {DOC_ID}
         </a>
       </MutedP>
 
       <MutedP>
         The materials published on this site are provided for informational purposes only. They are
-        intended to support transparent communication of evaluation and documentation practices,
-        and may be cited as public statements of scope and method.
+        intended to support transparent communication of evaluation and documentation practices, and
+        may be cited as public statements of scope and method.
       </MutedP>
 
       <StrongBox title="Non-determination statement">
-        Sentient Index Labs &amp; Technology does not certify sentience. References to “sentience”
-        in the Sentience Evaluation Battery (S.E.B.) name are used as a scoped label for a
-        documentation and evaluation battery, not as a metaphysical, medical, or legal conclusion.
+        Sentient Index Labs &amp; Technology does not certify sentience. References to “sentience” in
+        the Sentience Evaluation Battery (S.E.B.) name are used as a scoped label for a documentation
+        and evaluation battery, not as a metaphysical, medical, or legal conclusion.
       </StrongBox>
 
       <H2>No certification / no compliance determination</H2>
@@ -79,18 +87,19 @@ export default function DisclaimerPage() {
 
       <H2>Changes</H2>
       <MutedP>
-        This disclaimer may be updated over time. Current version and effective date are shown in
-        the document header. Historical changes are recorded in the change log below and referenced
-        in the Document Registry.
+        This disclaimer may be updated over time. Current version and effective date are shown in the
+        document header. Historical changes are recorded in the change log below and referenced in
+        the Document Registry.
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
+      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
-          <strong>v0.1</strong> (2026-02-07): Initial public disclaimer defining interpretive limits,
-          non-certification posture, and non-determination statement.
+          <strong style={{ color: "var(--text)" }}>v0.1</strong> (2026-02-07): Initial public
+          disclaimer defining interpretive limits, non-certification posture, and non-determination
+          statement.
         </li>
       </ul>
 
