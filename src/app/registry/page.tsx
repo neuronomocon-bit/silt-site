@@ -40,7 +40,11 @@ const DOCS: Doc[] = [
     scopeNote:
       "High-level descriptive overview of the Sentience Evaluation Battery (S.E.B.). Non-normative; does not define requirements or determinations.",
     changeLog: [
-      { version: "v0.1", date: "2026-02-08", summary: "Initial publication of the methodology overview." },
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary: "Initial publication of the methodology overview.",
+      },
     ],
   },
   {
@@ -86,7 +90,13 @@ const DOCS: Doc[] = [
     effectiveDate: "—",
     href: "/seb",
     scopeNote: "Placeholder page for a future embedded dashboard view. Not currently operational.",
-    changeLog: [{ version: "v0.0", date: "2026-02-08", summary: "Planned item listed; no released content." }],
+    changeLog: [
+      {
+        version: "v0.0",
+        date: "2026-02-08",
+        summary: "Planned item listed; no released content.",
+      },
+    ],
   },
   {
     id: "SILT-RES-001",
@@ -97,7 +107,11 @@ const DOCS: Doc[] = [
     href: "/resources",
     scopeNote: "Public index of resources and placeholders for planned publications. Informative only.",
     changeLog: [
-      { version: "v0.1", date: "2026-02-07", summary: "Initial resources listing and placeholder publications." },
+      {
+        version: "v0.1",
+        date: "2026-02-07",
+        summary: "Initial resources listing and placeholder publications.",
+      },
       {
         version: "v0.1.1",
         date: "2026-02-08",
@@ -113,7 +127,13 @@ const DOCS: Doc[] = [
     effectiveDate: "2026-02-08",
     href: "/privacy",
     scopeNote: "Privacy and data handling posture for this website. Informative only.",
-    changeLog: [{ version: "v0.1", date: "2026-02-08", summary: "Initial publication." }],
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary: "Initial publication.",
+      },
+    ],
   },
   {
     id: "SILT-LEGAL-TERM-001",
@@ -123,17 +143,29 @@ const DOCS: Doc[] = [
     effectiveDate: "2026-02-08",
     href: "/terms",
     scopeNote: "Website terms and limitations. Informative only.",
-    changeLog: [{ version: "v0.1", date: "2026-02-08", summary: "Initial publication." }],
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-08",
+        summary: "Initial publication.",
+      },
+    ],
   },
   {
     id: "SILT-LEGAL-DISC-001",
     title: "Disclaimer",
     status: "Informative",
     version: "v0.1",
-    effectiveDate: "2026-02-08",
+    effectiveDate: "2026-02-07",
     href: "/disclaimer",
     scopeNote: "Interpretive limits and non-certification posture. Informative only.",
-    changeLog: [{ version: "v0.1", date: "2026-02-08", summary: "Initial publication." }],
+    changeLog: [
+      {
+        version: "v0.1",
+        date: "2026-02-07",
+        summary: "Initial publication.",
+      },
+    ],
   },
 ];
 
@@ -150,7 +182,6 @@ function StatusPill({ status }: { status: Status }) {
     whiteSpace: "nowrap",
   };
 
-  // Keep subtle, but let the label itself communicate meaning.
   return <span style={base}>{status}</span>;
 }
 
