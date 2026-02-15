@@ -32,16 +32,6 @@ export function SiteFooter() {
         </a>
         <span style={sepStyle}>·</span>
 
-        <a href="/example" style={linkStyle}>
-          S.E.B. public example
-        </a>
-        <span style={sepStyle}>·</span>
-
-        <a href="/seb" style={linkStyle}>
-          S.E.B. dashboard (planned)
-        </a>
-        <span style={sepStyle}>·</span>
-
         <a href="/resources" style={linkStyle}>
           Resources
         </a>

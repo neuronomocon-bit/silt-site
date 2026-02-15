@@ -83,8 +83,6 @@ return (
   >
     <NavPill href="/methodology" label="Methodology" active={isActive("/methodology")} />
     <NavPill href="/registry" label="Registry" active={isActive("/registry")} />
-    <NavPill href="/example" label="S.E.B. public example" active={isActive("/example")} />
-    <NavPill href="/seb" label="Dashboard (planned)" active={isActive("/seb")} />
     <NavPill href="/resources" label="Resources" active={isActive("/resources")} />
     <NavPill href="/disclaimer" label="Disclaimer" active={isActive("/disclaimer")} />
   </nav>

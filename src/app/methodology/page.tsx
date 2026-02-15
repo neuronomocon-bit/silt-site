@@ -166,10 +166,6 @@ export default function MethodologyPage() {
         versioned summaries for reference.
       </MutedP>
 
-      <MutedP style={{ fontSize: 14 }}>
-        Placeholder: <a href="/seb">S.E.B. Dashboard</a>
-      </MutedP>
-
       <MutedP style={{ fontSize: 14, marginTop: 18 }}>
         For a simplified, non-operative illustration, see the{" "}
         <a href="/example">S.E.B. public example</a>. For framework maturity and scope status, see{" "}

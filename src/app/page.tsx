@@ -57,7 +57,6 @@ export default function HomePage() {
           <span style={{ margin: "0 10px" }}>·</span>
           <a href="/example">View Public Example</a>
           <span style={{ margin: "0 10px" }}>·</span>
-          <a href="/seb">S.E.B. Dashboard (planned)</a>
         </div>
       </div>
 

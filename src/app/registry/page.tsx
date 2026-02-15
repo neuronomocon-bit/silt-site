@@ -82,22 +82,7 @@ const DOCS: Doc[] = [
       },
     ],
   },
-  {
-    id: "SILT-SEB-DASH-PLN-001",
-    title: "S.E.B. Dashboard (planned)",
-    status: "Planned",
-    version: "v0.0",
-    effectiveDate: "—",
-    href: "/seb",
-    scopeNote: "Placeholder page for a future embedded dashboard view. Not currently operational.",
-    changeLog: [
-      {
-        version: "v0.0",
-        date: "2026-02-08",
-        summary: "Planned item listed; no released content.",
-      },
-    ],
-  },
+  
   {
     id: "SILT-RES-001",
     title: "Resources",

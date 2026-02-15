@@ -236,10 +236,6 @@ export default function ExamplePage() {
         remain non-determinative and may be limited in scope.
       </MutedP>
 
-      <MutedP style={{ fontSize: 14 }}>
-        Placeholder: <a href="/seb">S.E.B. Dashboard</a>
-      </MutedP>
-
       <MutedP style={{ fontSize: 14, marginTop: 24 }}>
         <a href="/methodology">Return to Methodology</a>
       </MutedP>
