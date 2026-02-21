@@ -7,7 +7,11 @@ export function middleware(req: NextRequest) {
 
   // If you haven't set env vars yet, do NOT lock you out locally.
   // (On production, make sure these are set.)
-  if (!user || !pass) return NextResponse.next();
+  if (!user || !pass) {
+    const res = NextResponse.next();
+    res.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return res;
+  }
 
   const auth = req.headers.get("authorization");
 
@@ -18,7 +22,9 @@ export function middleware(req: NextRequest) {
       const [u, p] = decoded.split(":");
 
       if (u === user && p === pass) {
-        return NextResponse.next();
+        const res = NextResponse.next();
+        res.headers.set("X-Robots-Tag", "noindex, nofollow");
+        return res;
       }
     } catch {
       // fall through to challenge

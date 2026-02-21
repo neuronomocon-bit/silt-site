@@ -7,6 +7,10 @@ export const metadata = {
   title: "Sentient Index Labs & Technology",
   description:
     "Sentient Index Labs & Technology develops governance frameworks and oversight models for emerging AI systems operating within regulated professional environments.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
