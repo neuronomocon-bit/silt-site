@@ -70,6 +70,12 @@ export function SiteNav() {
     >
       <NavPill href="/our-work" label="Our Work" />
       <NavPill href="/services" label="Services" />
+
+      {/* External links to sentienceevaluationbattery.com */}
+      <span style={{ width: 1, height: 16, background: "#e0e0e0", flexShrink: 0 }} />
+      <NavPill href="https://sentienceevaluationbattery.com/admin" label="S.E.B." />
+      <NavPill href="https://sentienceevaluationbattery.com/client" label="Client Portal" />
+      <NavPill href="https://sentienceevaluationbattery.com/cream_current.html" label="CREAM" />
     </nav>
   );
 }
