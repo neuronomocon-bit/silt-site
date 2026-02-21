@@ -4,10 +4,9 @@ import { DocumentHeader } from "@/components/document-header";
 export const metadata = {
   title: "Privacy Policy | Sentient Index Labs & Technology",
   description:
-    "Privacy policy describing data handling for the Sentient Index Labs & Technology public website.",
+    "Privacy policy describing data handling for the Sentient Index Labs & Technology website.",
 };
 
-const DOC_ID = "SILT-LEGAL-PRIV-001";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-08";
 
@@ -16,7 +15,7 @@ export default function PrivacyPage() {
     <PageWrap>
       <DocumentHeader
         title="Privacy Policy"
-        subtitle={`Document ID: ${DOC_ID} · Website data handling statement`}
+        subtitle="Website data handling statement"
         status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
@@ -30,45 +29,31 @@ export default function PrivacyPage() {
         </p>
       </Callout>
 
-      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
-        Registry entry:{" "}
-        <a
-          href="/registry"
-          style={{
-            color: "var(--text)",
-            textDecoration: "none",
-            fontWeight: 650,
-          }}
-        >
-          {DOC_ID}
-        </a>
-      </MutedP>
-
       <MutedP>
-        Sentient Index Labs &amp; Technology (“SILT,” “we,” “us”) operates this website to publish
-        public documentation related to the Sentience Evaluation Battery (S.E.B.). This Privacy
+        Sentient Index Labs &amp; Technology ("SILT," "we," "us") operates this website to publish
+        information about our governance frameworks, oversight models, and services. This Privacy
         Policy explains what information we collect on this site, how we use it, and the choices
         available to you.
       </MutedP>
 
       <H2>Information we collect</H2>
 
-      <StrongBox title="Site usage data (if enabled)">
-        We may collect limited technical information about visits to this website (for example:
-        browser type, approximate location at a city/region level, referring page, and pages viewed)
-        for security and basic analytics. This information is used to operate and improve the site
-        and is not intended to identify you personally.
+      <StrongBox title="Site usage data">
+        We may collect limited technical information about visits to this website — for example:
+        browser type, approximate location at a city or region level, referring page, and pages
+        viewed — for security and basic analytics. This information is used to operate and improve
+        the site and is not intended to identify you personally.
       </StrongBox>
 
       <StrongBox title="Information you submit">
-        If you use a contact form or email address provided on the site, we will receive the
-        information you choose to send (for example: name, email address, organization, and message
-        content). Do not submit confidential or sensitive information unless specifically requested
-        through a secure channel.
+        If you contact us via email or any form on the site, we will receive the information you
+        choose to send — for example: name, email address, organization, and message content. Do
+        not submit confidential or sensitive information unless specifically requested through a
+        secure channel.
       </StrongBox>
 
       <H2>How we use information</H2>
-      <ul style={{ color: "var(--text-muted)", lineHeight: 1.7, paddingLeft: 18 }}>
+      <ul style={{ color: "#5a5a5a", lineHeight: 1.7, paddingLeft: 18 }}>
         <li>Operate, maintain, and secure the website</li>
         <li>Respond to inquiries and communications you initiate</li>
         <li>Improve content quality and usability</li>
@@ -85,9 +70,9 @@ export default function PrivacyPage() {
       <H2>Data sharing</H2>
       <MutedP>
         We do not sell personal information. We may share information with service providers that
-        help operate the website (for example: hosting, security, or analytics providers) only as
-        necessary to provide those services. We may also disclose information if required by law or
-        to protect the security and integrity of the site.
+        help operate the website — for example: hosting, security, or analytics providers — only
+        as necessary to provide those services. We may also disclose information if required by
+        law or to protect the security and integrity of the site.
       </MutedP>
 
       <H2>Data retention</H2>
@@ -99,9 +84,9 @@ export default function PrivacyPage() {
 
       <H2>Security</H2>
       <MutedP>
-        We use reasonable administrative and technical safeguards appropriate to a public
-        documentation website. No method of transmission or storage is perfectly secure; we cannot
-        guarantee absolute security.
+        We use reasonable administrative and technical safeguards appropriate to a public website.
+        No method of transmission or storage is perfectly secure; we cannot guarantee absolute
+        security.
       </MutedP>
 
       <H2>Children</H2>
@@ -113,23 +98,18 @@ export default function PrivacyPage() {
       <H2>Changes to this policy</H2>
       <MutedP>
         We may update this Privacy Policy over time. The document header shows the current version
-        and effective date. Material changes will be reflected in the change log below and in the
-        Document Registry.
+        and effective date.
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
+      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
-          <strong style={{ color: "var(--text)" }}>v0.1</strong> (2026-02-08): Initial public privacy
+          <strong style={{ color: "#111" }}>v0.1</strong> (2026-02-08): Initial public privacy
           policy for this website.
         </li>
       </ul>
-
-      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
-        Back to <a href="/registry">Document Registry</a>.
-      </MutedP>
     </PageWrap>
   );
 }

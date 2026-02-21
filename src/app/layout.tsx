@@ -6,7 +6,7 @@ import { SiteNav } from "@/components/site-nav";
 export const metadata = {
   title: "Sentient Index Labs & Technology",
   description:
-    "Sentient Index Labs & Technology (SILT) — governance-forward evaluation and documentation for advanced AI systems, including the Sentience Evaluation Battery (S.E.B.).",
+    "Sentient Index Labs & Technology develops governance frameworks and oversight models for emerging AI systems operating within regulated professional environments.",
 };
 
 export default function RootLayout({
@@ -89,20 +89,6 @@ export default function RootLayout({
                 </div>
               </a>
 
-              {/* Subtitle stays its own link to Registry */}
-              <a
-                href="/registry"
-                className="registry-link"
-                style={{
-                  color: "var(--text-muted)",
-                  fontSize: 13,
-                  lineHeight: 1.2,
-                  textDecoration: "none",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Public documentation — Sentience Evaluation Battery (S.E.B.)
-              </a>
             </div>
 
             {/* Right: Primary navigation */}

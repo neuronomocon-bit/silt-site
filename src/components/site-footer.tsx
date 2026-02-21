@@ -27,22 +27,6 @@ export function SiteFooter() {
           alignItems: "center",
         }}
       >
-        <a href="/methodology" style={linkStyle}>
-          Methodology
-        </a>
-        <span style={sepStyle}>·</span>
-
-        <a href="/resources" style={linkStyle}>
-          Resources
-        </a>
-        <span style={sepStyle}>·</span>
-
-        {/* NEW LINK */}
-        <a href="/status" style={linkStyle}>
-          Framework status
-        </a>
-        <span style={sepStyle}>·</span>
-
         <a href="/privacy" style={linkStyle}>
           Privacy
         </a>
@@ -59,10 +43,7 @@ export function SiteFooter() {
       </div>
 
       <div style={{ marginTop: 10 }}>
-        © {new Date().getFullYear()} Sentient Index Labs &amp; Technology. All
-        materials are provided for informational purposes only and do not
-        constitute certification, compliance determination, or a determination
-        of sentience.
+        © {new Date().getFullYear()} Sentient Index Labs &amp; Technology. All rights reserved.
       </div>
     </footer>
   );

@@ -3,15 +3,10 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 
-function NavPill({
-  href,
-  label,
-  active,
-}: {
-  href: string;
-  label: string;
-  active: boolean;
-}) {
+function NavPill({ href, label }: { href: string; label: string }) {
+  const pathname = usePathname();
+  const active = pathname === href || pathname.startsWith(href + "/");
+
   return (
     <a
       href={href}
@@ -45,7 +40,6 @@ function NavPill({
         e.currentTarget.style.color = "#5a5a5a";
       }}
     >
-      {/* subtle active indicator dot */}
       <span
         aria-hidden="true"
         style={{
@@ -63,29 +57,19 @@ function NavPill({
 }
 
 export function SiteNav() {
-  const pathname = usePathname();
-
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname === href || pathname.startsWith(href + "/");
-  };
-
-return (
-  <nav
-    aria-label="Primary"
-    style={{
-      display: "flex",
-      flexWrap: "wrap",
-      gap: 8,
-      alignItems: "center",
-      justifyContent: "flex-end",
-    }}
-  >
-    <NavPill href="/methodology" label="Methodology" active={isActive("/methodology")} />
-    <NavPill href="/registry" label="Registry" active={isActive("/registry")} />
-    <NavPill href="/resources" label="Resources" active={isActive("/resources")} />
-    <NavPill href="/disclaimer" label="Disclaimer" active={isActive("/disclaimer")} />
-  </nav>
-);
-
+  return (
+    <nav
+      aria-label="Primary"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: 8,
+        alignItems: "center",
+        justifyContent: "flex-end",
+      }}
+    >
+      <NavPill href="/our-work" label="Our Work" />
+      <NavPill href="/services" label="Services" />
+    </nav>
+  );
 }

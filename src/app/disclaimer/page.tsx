@@ -1,13 +1,12 @@
-import { Callout, H2, MutedP, PageWrap, StrongBox } from "@/components/ui";
+import { Callout, H2, MutedP, PageWrap } from "@/components/ui";
 import { DocumentHeader } from "@/components/document-header";
 
 export const metadata = {
   title: "Disclaimer | Sentient Index Labs & Technology",
   description:
-    "Interpretive limits, non-certification posture, and non-determination statement for public SILT documents, including S.E.B.",
+    "Interpretive limits, non-certification posture, and liability disclaimer for Sentient Index Labs & Technology.",
 };
 
-const DOC_ID = "SILT-LEGAL-DISC-001";
 const DOC_VERSION = "v0.1";
 const EFFECTIVE_DATE = "2026-02-07";
 
@@ -16,11 +15,11 @@ export default function DisclaimerPage() {
     <PageWrap>
       <DocumentHeader
         title="Disclaimer"
-        subtitle={`Document ID: ${DOC_ID} · Interpretive limits and non-certification posture`}
+        subtitle="Interpretive limits and non-certification posture"
         status="Informative"
         version={DOC_VERSION}
         effectiveDate={EFFECTIVE_DATE}
-        note="This disclaimer applies to public SILT materials, including references to the Sentience Evaluation Battery (S.E.B.)."
+        note="This disclaimer applies to all public materials published by Sentient Index Labs & Technology."
       />
 
       <Callout title="Informative document">
@@ -30,52 +29,25 @@ export default function DisclaimerPage() {
         </p>
       </Callout>
 
-      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
-        Registry entry:{" "}
-        <a
-          href="/registry"
-          style={{
-            color: "var(--text)",
-            textDecoration: "none",
-            fontWeight: 650,
-          }}
-        >
-          {DOC_ID}
-        </a>
-      </MutedP>
-
       <MutedP>
         The materials published on this site are provided for informational purposes only. They are
-        intended to support transparent communication of evaluation and documentation practices, and
-        may be cited as public statements of scope and method.
+        intended to support transparent communication of our governance frameworks, oversight models,
+        and evaluation practices, and may be cited as public statements of scope and method.
       </MutedP>
 
-      <StrongBox title="Non-determination statement">
-        Sentient Index Labs &amp; Technology does not certify sentience. References to “sentience” in
-        the Sentience Evaluation Battery (S.E.B.) name are used as a scoped label for a documentation
-        and evaluation battery, not as a metaphysical, medical, or legal conclusion.
-      </StrongBox>
-
-      <H2>No certification / no compliance determination</H2>
+      <H2>No certification or compliance determination</H2>
       <MutedP>
         No content on this site constitutes certification, approval, conformity assessment, or a
         determination of compliance with any law, regulation, or standard. Any references to
-        governance frameworks (including the EU Artificial Intelligence Act, the NIST AI Risk
-        Management Framework, ISO/IEC standards, or similar) are provided for contextual mapping and
-        explanation only.
+        governance frameworks — including the EU Artificial Intelligence Act, the NIST AI Risk
+        Management Framework, ISO/IEC standards, or similar — are provided for contextual mapping
+        and explanation only.
       </MutedP>
 
       <H2>No legal advice</H2>
       <MutedP>
         Nothing on this site is legal advice. You should consult qualified counsel for legal and
         regulatory interpretation, compliance planning, or conformity assessment.
-      </MutedP>
-
-      <H2>Limitations of illustrative materials</H2>
-      <MutedP>
-        Example content (including the S.E.B. public example) is non-operative and non-determinative.
-        It must not be used for benchmarking, certification, compliance, or comparative claims.
-        Illustrative layouts are intended only to show how documentation may be structured.
       </MutedP>
 
       <H2>Reliance and responsibility</H2>
@@ -85,27 +57,31 @@ export default function DisclaimerPage() {
         decisions, and regulatory compliance.
       </MutedP>
 
+      <H2>Limitations of published materials</H2>
+      <MutedP>
+        Frameworks, models, and examples published on this site are descriptive and informational.
+        They must not be used as the basis for certification, compliance claims, or comparative
+        scoring without independent qualified assessment.
+      </MutedP>
+
       <H2>Changes</H2>
       <MutedP>
-        This disclaimer may be updated over time. Current version and effective date are shown in the
-        document header. Historical changes are recorded in the change log below and referenced in
-        the Document Registry.
+        This disclaimer may be updated over time. Current version and effective date are shown in
+        the document header.
       </MutedP>
 
-      <hr style={{ margin: "32px 0", borderColor: "var(--border)" }} />
+      <hr style={{ margin: "32px 0", borderColor: "#e7e7e7" }} />
 
       <H2>Change log</H2>
-      <ul style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
+      <ul style={{ color: "#5a5a5a", fontSize: 14, lineHeight: 1.6, paddingLeft: 18 }}>
         <li>
-          <strong style={{ color: "var(--text)" }}>v0.1</strong> (2026-02-07): Initial public
-          disclaimer defining interpretive limits, non-certification posture, and non-determination
-          statement.
+          <strong style={{ color: "#111" }}>v0.1</strong> (2026-02-07): Initial public disclaimer.
+        </li>
+        <li>
+          <strong style={{ color: "#111" }}>v0.2</strong> (2026-02-20): Updated to reflect
+          company-wide scope; removed S.E.B.-specific language.
         </li>
       </ul>
-
-      <MutedP style={{ fontSize: 14, marginTop: 10 }}>
-        Back to <a href="/registry">Document Registry</a>.
-      </MutedP>
     </PageWrap>
   );
 }
